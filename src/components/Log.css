@@ -1,0 +1,14 @@
+.table {
+    width: 200px;
+  }
+  .column {
+    width: 50px;
+    justify-content: center;
+    border-style: double;
+    border-color: white;
+  }
+
+  .column-header {
+      border-style: solid;
+      border-color: white;
+  }
