@@ -11,7 +11,7 @@ function Add() {
 
   useEffect(() => {
     setTotal(number1 + number2 + number3 + number4);
-  })
+  });
   const [local, setLocal] = useState(() => {
     const saved = localStorage.getItem("saved");
     const initialValue = JSON.parse(saved);
@@ -20,15 +20,14 @@ function Add() {
 
   function calculateTotal() {
     if (total === 0) {
-      const play = [number1, number2, number3, number4]
+      const play = [number1, number2, number3, number4];
       setLocal(arr => [...arr, play]);
       localStorage.setItem("saved", JSON.stringify(local));
       console.log(local);
-    }
-    else(alert("Cannot submit. Total is not zero."))
+    } else alert("Cannot submit. Total is not zero.");
   }
 
-  function deleteLocal () {
+  function deleteLocal() {
     setLocal([]);
     console.log("delete all clicked!");
   }
@@ -37,39 +36,47 @@ function Add() {
     <div className="Add">
       <h1>Adding score</h1>
       <div className="control">
-        <input className="number"
+        <input
+          className="number"
           type="number"
-          value={number1}
-          onChange={(e) => setNumber1(+e.target.value)}
-          placeholder="0"
+          pattern="\d*"
+          // value={number1}
+          onChange={e => setNumber1(+e.target.value)}
         />
-        <input className="number"
+        <input
+          className="number"
           type="number"
-          value={number2}
-          onChange={(e) => setNumber2(+e.target.value)}
-          placeholder="0"
+          pattern="\d*"
+          // value={number2}
+          onChange={e => setNumber2(+e.target.value)}
         />
-                <input className="number"
+        <input
+          className="number"
           type="number"
-          value={number3}
-          onChange={(e) => setNumber3(+e.target.value)}
-          placeholder="0"
+          pattern="\d*"
+          // value={number3}
+          onChange={e => setNumber3(+e.target.value)}
         />
-        <input className="number"
+        <input
+          className="number"
           type="number"
-          value={number4}
-          onChange={(e) => setNumber4(+e.target.value)}
-          placeholder="0"
+          pattern="\d*"
+          // value={number4}
+          onChange={e => setNumber4(+e.target.value)}
         />
       </div>
 
-      <button className="submit" onClick={calculateTotal}>Submit</button>
+      <button className="submit" onClick={calculateTotal}>
+        Submit
+      </button>
 
       <p>{total}</p>
       <did>
-        <Log arr={local}/>
+        <Log arr={local} />
       </did>
-      <button className="delete-all" onClick={() => deleteLocal()}>Delete All</button>
+      <button className="delete-all" onClick={() => deleteLocal()}>
+        Delete All
+      </button>
     </div>
   );
 }

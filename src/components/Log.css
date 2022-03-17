@@ -1,8 +1,8 @@
 .table {
-    width: 200px;
+    width: 300px;
   }
   .column {
-    width: 50px;
+    width: 70px;
     justify-content: center;
     border-bottom-style: solid;
     border-color: white;
