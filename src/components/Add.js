@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Log from "./Log";
+import "./Add.css";
 
 function Add() {
   const [number1, setNumber1] = useState(0);
@@ -28,15 +29,14 @@ function Add() {
   }
 
   function deleteLocal () {
-    // localStorage.setItem("saved", []);
-    // setLocal([]);
+    setLocal([]);
+    console.log("delete all clicked!");
   }
 
   return (
-    <div className="App">
+    <div className="Add">
       <h1>Adding score</h1>
-
-      <div className="number-inputs">
+      <div className="control">
         <input className="number"
           type="number"
           value={number1}
@@ -63,13 +63,13 @@ function Add() {
         />
       </div>
 
-      <button onClick={calculateTotal}>Add Them!</button>
+      <button className="submit" onClick={calculateTotal}>Submit</button>
 
-      <h2>{total}</h2>
+      <p>{total}</p>
       <did>
         <Log arr={local}/>
       </did>
-      <button className="delete-all" onClick={deleteLocal()}>Delete All</button>
+      <button className="delete-all" onClick={() => deleteLocal()}>Delete All</button>
     </div>
   );
 }

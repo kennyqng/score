@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Log.css";
 
-function Log (props) {
+function Log (props) { 
   function total () {
     let player1 = 0;
     let player2 = 0;
@@ -21,15 +21,15 @@ function Log (props) {
         <div>
       <table>
         <tbody>
-          <tr className="header">Sum:{total().map((item) =>{
+          <tr className="header">{total().map((item) =>{
             return (
               <td className="column-header">{item}</td>
             )
           })}</tr>
           <div></div>
-          {props.arr.slice(0).reverse().map((item, index) => {
+          {props.arr.slice(0).reverse().map((item, ) => {
             return (
-              <tr className="table">{index}
+              <tr className="table">
                 <td className="column">{item[0]}</td>
                 <td className="column">{item[1]}</td>
                 <td className="column">{item[2]}</td>

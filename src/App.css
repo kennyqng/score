@@ -13,20 +13,3 @@
 .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.number {
-  width: 50px;
-}
-
-/* .delete-all {
-  position: fixed;
-  bottom: 0
-} */
