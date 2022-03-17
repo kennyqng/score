@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename={"/score"}>
       <Routes>
         <Route path="/" element={<Add />}></Route>
       </Routes>
