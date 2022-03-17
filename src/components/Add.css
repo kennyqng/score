@@ -10,11 +10,18 @@
     color: white;
 }
 .control {
+  display: block;
   text-align: center;
 }
 .number {
-  width: 70px;
+  width: 100px;
+  text-align: center;
 }
 .submit{
     background-color: none;
+}
+.playerName {
+  align-items: flex-start;
+  padding: 0px;
+  margin: 0px;
 }
