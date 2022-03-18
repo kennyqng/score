@@ -1,0 +1,16 @@
+.table {
+    width: 300px;
+  }
+  .column-header {
+      border-style: solid;
+      border-color: white;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+  }
+  .column {
+    width: 70px;
+    justify-content: center;
+    border-bottom-style: solid;
+    border-color: white;
+  }

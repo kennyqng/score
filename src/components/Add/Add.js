@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Log from "./Log";
+import Log from "../Log/Log";
 import "./Add.css";
 
 function Add() {
@@ -8,6 +8,8 @@ function Add() {
   const [number3, setNumber3] = useState();
   const [number4, setNumber4] = useState();
   const [total, setTotal] = useState(number1 + number2 + number3 + number4);
+  let names = JSON.parse(localStorage.getItem("storedNames")) || ["p1", "p2", "p3", "p4"];
+  
 
   useEffect(() => {
     setTotal(number1 + number2 + number3 + number4);
@@ -18,7 +20,7 @@ function Add() {
     return initialValue || [];
   });
 
-  function calculateTotal() {
+  function handleSubmit () {
     if (total === 0) {
       const play = [number1, number2, number3, number4];
       setLocal(arr => [...arr, play]);
@@ -27,16 +29,11 @@ function Add() {
     } else alert("Cannot submit. Total is not zero.");
   }
 
-  function deleteLocal() {
-    setLocal([]);
-    console.log("delete all clicked!");
-  }
-
   return (
     <div className="Add">
       <h1>Adding score</h1>
       <div className="control">
-        <div className="player-control"><p className="playerName" >Kenny</p>
+        <div className="player-control"><p className="playerName" >{names[0]}</p>
           <button
             onClick={() => setNumber1(number1 != null ? number1 - 1 : 0 - 1)}
           >
@@ -55,7 +52,7 @@ function Add() {
             +
           </button>
         </div>
-        <div className="player-control"><p className="playerName" >Khoa</p>
+        <div className="player-control"><p className="playerName" >{names[1]}</p>
           <button
             onClick={() => setNumber2(number2 != null ? number2 - 1 : 0 - 1)}
           >
@@ -74,7 +71,7 @@ function Add() {
             +
           </button>
         </div>
-        <div className="player-control"><p className="playerName" >Duy</p>
+        <div className="player-control"><p className="playerName" >{names[2]}</p>
           <button
             onClick={() => setNumber3(number3 != null ? number3 - 1 : 0 - 1)}
           >
@@ -93,7 +90,7 @@ function Add() {
             +
           </button>
         </div>
-        <div className="player-control"><p className="playerName" >Leo</p>
+        <div className="player-control"><p className="playerName" >{names[3]}</p>
           <button
             onClick={() => setNumber4(number4 != null ? number4 - 1 : 0 - 1)}
           >
@@ -114,7 +111,7 @@ function Add() {
         </div>
       </div>
 
-      <button className="submit" onClick={calculateTotal}>
+      <button className="submit" onClick={() => handleSubmit()}>
         Submit
       </button>
 
@@ -122,9 +119,6 @@ function Add() {
       <did>
         <Log arr={local} />
       </did>
-      <button className="delete-all" onClick={() => deleteLocal()}>
-        Delete All
-      </button>
     </div>
   );
 }
