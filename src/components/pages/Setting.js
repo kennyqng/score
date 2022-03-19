@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Setting.css";
 
 function Setting(props) {
@@ -12,8 +13,14 @@ function Setting(props) {
     setPlayerNames([player1, player2, player3, player4]);
   });
 
+  let navigate = useNavigate();
+
+
   function deleteLocal() {
-    localStorage.removeItem("saved");
+      if (window.confirm("delete all data?") === true) {
+          localStorage.removeItem("scoreData");
+          navigate("/");
+      }
   }
 
   const [player1, setPlayer1] = useState("");
@@ -23,6 +30,7 @@ function Setting(props) {
 
   function saveNames() {
     localStorage.setItem("storedNames", JSON.stringify(playerNames));
+    navigate("/");
   }
 
   return (
@@ -33,7 +41,7 @@ function Setting(props) {
         })}
       </div>
       <div>
-          <p>Enter new player names below:</p>
+        <p className="instruction">Enter new warriors here:</p>
         <input className="input" onChange={e => setPlayer1(e.target.value)}></input>
         <input className="input" onChange={e => setPlayer2(e.target.value)}></input>
         <input className="input" onChange={e => setPlayer3(e.target.value)}></input>

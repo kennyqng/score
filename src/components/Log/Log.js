@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Log.css";
 
 function Log(props) {
@@ -34,7 +34,7 @@ function Log(props) {
           </tr>
           <tr className="header-total">
             {total().map(item => {
-              return <td className="column-header">{item}</td>;
+              return <td className= {item < 0 ? 'red-column-header' : 'column-header'} >{item}</td>;
             })}
           </tr>
             {props.arr
@@ -43,10 +43,10 @@ function Log(props) {
               .map(item => {
                 return (
                   <tr className="table">
-                    <td className="column">{item[0]}</td>
-                    <td className="column">{item[1]}</td>
-                    <td className="column">{item[2]}</td>
-                    <td className="column">{item[3]}</td>
+                    <td className={item[0] < 0 ? 'red-column' : 'column'}>{item[0]}</td>
+                    <td className={item[1] < 0 ? 'red-column' : 'column'}>{item[1]}</td>
+                    <td className={item[2] < 0 ? 'red-column' : 'column'}>{item[2]}</td>
+                    <td className={item[3] < 0 ? 'red-column' : 'column'}>{item[3]}</td>
                   </tr>
                 );
               })}

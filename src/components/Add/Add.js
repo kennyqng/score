@@ -3,19 +3,20 @@ import Log from "../Log/Log";
 import "./Add.css";
 
 function Add() {
-  const [number1, setNumber1] = useState();
-  const [number2, setNumber2] = useState();
-  const [number3, setNumber3] = useState();
-  const [number4, setNumber4] = useState();
+  const [number1, setNumber1] = useState(0);
+  const [number2, setNumber2] = useState(0);
+  const [number3, setNumber3] = useState(0);
+  const [number4, setNumber4] = useState(0);
   const [total, setTotal] = useState(number1 + number2 + number3 + number4);
   let names = JSON.parse(localStorage.getItem("storedNames")) || ["Player 1", "Player 2", "Player 3", "Player 4"];
   
 
   useEffect(() => {
+    localStorage.setItem("scoreData", JSON.stringify(local));
     setTotal(number1 + number2 + number3 + number4);
   });
   const [local, setLocal] = useState(() => {
-    const saved = localStorage.getItem("saved");
+    const saved = localStorage.getItem("scoreData");
     const initialValue = JSON.parse(saved);
     return initialValue || [];
   });
@@ -23,15 +24,18 @@ function Add() {
   function handleSubmit () {
     if (total === 0) {
       const play = [number1, number2, number3, number4];
+      console.log(play);
       setLocal(arr => [...arr, play]);
-      localStorage.setItem("saved", JSON.stringify(local));
-      console.log(local);
-    } else alert("Cannot submit. Total is not zero.");
+      setNumber1(0);
+      setNumber2(0);
+      setNumber3(0);
+      setNumber4(0);
+    } else alert("Cannot submit. Sum of scores is not zero.");
   }
 
   return (
     <div className="Add">
-      <p>Sum: {total}</p>
+      <p>Sum: {isNaN(total) ? 0 : total}</p>
       <div className="control">
         <div className="player-control"><p className="playerName" >{names[0]}</p>
           <button className="adjust"
@@ -40,9 +44,8 @@ function Add() {
             -
           </button>
           <input
-            className="number"
+            className={number1 < 0 ? "red-number" :"number"}
             type="number"
-            pattern="\d*"
             value={number1}
             onChange={e => setNumber1(+e.target.value)}
           />
@@ -59,9 +62,8 @@ function Add() {
             -
           </button>
           <input 
-            className="number"
+            className={number2 < 0 ? "red-number" :"number"}
             type="number"
-            pattern="\d*"
             value={number2}
             onChange={e => setNumber2(+e.target.value)}
           />
@@ -78,9 +80,8 @@ function Add() {
             -
           </button>
           <input
-            className="number"
+            className={number3 < 0 ? "red-number" :"number"}
             type="number"
-            pattern="\d*"
             value={number3}
             onChange={e => setNumber3(+e.target.value)}
           />
@@ -97,9 +98,8 @@ function Add() {
             -
           </button>
           <input
-            className="number"
+            className={number4 < 0 ? "red-number" :"number"}
             type="number"
-            pattern="\d*"
             value={number4}
             onChange={e => setNumber4(+e.target.value)}
           />

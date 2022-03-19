@@ -9,9 +9,27 @@
   color: black;
   font-weight: bold;
 }
+.red-column-header {
+  width: 70px;
+  border-style: solid;
+  border-color: white;
+  background-color: white;
+  color: red;
+  font-weight: bold;
+}
 .column {
   width: 70px;
   justify-content: center;
   border-bottom-style: solid;
   border-color: white;
+}
+.red-column {
+  width: 70px;
+  justify-content: center;
+  border-bottom-style: solid;
+  border-color: white;
+  color: rgb(255, 144, 144);
+}
+.header-names {
+  font-size: large;
 }
