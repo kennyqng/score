@@ -8,7 +8,7 @@ function Add() {
   const [number3, setNumber3] = useState();
   const [number4, setNumber4] = useState();
   const [total, setTotal] = useState(number1 + number2 + number3 + number4);
-  let names = JSON.parse(localStorage.getItem("storedNames")) || ["p1", "p2", "p3", "p4"];
+  let names = JSON.parse(localStorage.getItem("storedNames")) || ["Player 1", "Player 2", "Player 3", "Player 4"];
   
 
   useEffect(() => {
@@ -31,8 +31,7 @@ function Add() {
 
   return (
     <div className="Add">
-      <h1>Adding Score</h1>
-      <p>sum: {total}</p>
+      <p>Sum: {total}</p>
       <div className="control">
         <div className="player-control"><p className="playerName" >{names[0]}</p>
           <button className="adjust"

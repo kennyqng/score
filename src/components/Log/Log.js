@@ -37,7 +37,6 @@ function Log(props) {
               return <td className="column-header">{item}</td>;
             })}
           </tr>
-          <div>
             {props.arr
               .slice(0)
               .reverse()
@@ -51,7 +50,6 @@ function Log(props) {
                   </tr>
                 );
               })}
-          </div>
         </tbody>
       </table>
     </div>
