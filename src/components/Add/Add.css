@@ -13,15 +13,28 @@
   display: block;
   text-align: center;
 }
+.player-control {
+  margin-bottom: 10px;
+}
+.adjust {
+  width: 45px;
+  height: 45px;
+  font-size: larger;
+}
 .number {
-  width: 100px;
+  margin: 0px 20px 0px 20px;
+  width: 170px;
+  height: 30px;
   text-align: center;
 }
 .submit{
-    background-color: none;
+  font-size: larger;
+  width: 150px;
+  height: 45px;
+  margin-bottom: 20px;
 }
 .playerName {
-  align-items: flex-start;
+  /* display: none; */
   padding: 0px;
   margin: 0px;
 }

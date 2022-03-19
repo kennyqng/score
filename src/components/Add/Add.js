@@ -31,10 +31,11 @@ function Add() {
 
   return (
     <div className="Add">
-      <h1>Adding score</h1>
+      <h1>Adding Score</h1>
+      <p>sum: {total}</p>
       <div className="control">
         <div className="player-control"><p className="playerName" >{names[0]}</p>
-          <button
+          <button className="adjust"
             onClick={() => setNumber1(number1 != null ? number1 - 1 : 0 - 1)}
           >
             -
@@ -46,33 +47,33 @@ function Add() {
             value={number1}
             onChange={e => setNumber1(+e.target.value)}
           />
-          <button
+          <button className="adjust"
             onClick={() => setNumber1(number1 != null ? number1 + 1 : 0 + 1)}
           >
             +
           </button>
         </div>
         <div className="player-control"><p className="playerName" >{names[1]}</p>
-          <button
+          <button className="adjust"
             onClick={() => setNumber2(number2 != null ? number2 - 1 : 0 - 1)}
           >
             -
           </button>
-          <input
+          <input 
             className="number"
             type="number"
             pattern="\d*"
             value={number2}
             onChange={e => setNumber2(+e.target.value)}
           />
-          <button
+          <button className="adjust"
             onClick={() => setNumber2(number2 != null ? number2 + 1 : 0 + 1)}
           >
             +
           </button>
         </div>
         <div className="player-control"><p className="playerName" >{names[2]}</p>
-          <button
+          <button className="adjust"
             onClick={() => setNumber3(number3 != null ? number3 - 1 : 0 - 1)}
           >
             -
@@ -84,14 +85,14 @@ function Add() {
             value={number3}
             onChange={e => setNumber3(+e.target.value)}
           />
-          <button
+          <button className="adjust"
             onClick={() => setNumber3(number3 != null ? number3 + 1 : 0 + 1)}
           >
             +
           </button>
         </div>
         <div className="player-control"><p className="playerName" >{names[3]}</p>
-          <button
+          <button className="adjust"
             onClick={() => setNumber4(number4 != null ? number4 - 1 : 0 - 1)}
           >
             -
@@ -103,7 +104,7 @@ function Add() {
             value={number4}
             onChange={e => setNumber4(+e.target.value)}
           />
-          <button
+          <button className="adjust"
             onClick={() => setNumber4(number4 != null ? number4 + 1 : 0 + 1)}
           >
             +
@@ -114,11 +115,9 @@ function Add() {
       <button className="submit" onClick={() => handleSubmit()}>
         Submit
       </button>
-
-      <p>{total}</p>
-      <did>
+      <div>
         <Log arr={local} />
-      </did>
+      </div>
     </div>
   );
 }

@@ -27,13 +27,18 @@ function Setting(props) {
 
   return (
     <div className="setting">
-        <div className="name-field">
-            {playerNames.map(name => {return <div className="name">{name}</div>;})}
-        </div>
-      <input onChange={e => setPlayer1(e.target.value)}></input>
-      <input onChange={e => setPlayer2(e.target.value)}></input>
-      <input onChange={e => setPlayer3(e.target.value)}></input>
-      <input onChange={e => setPlayer4(e.target.value)}></input>
+      <div className="name-field">
+        {playerNames.map(name => {
+          return <div className="name">{name}</div>;
+        })}
+      </div>
+      <div>
+          <p>Enter new player names below:</p>
+        <input className="input" onChange={e => setPlayer1(e.target.value)}></input>
+        <input className="input" onChange={e => setPlayer2(e.target.value)}></input>
+        <input className="input" onChange={e => setPlayer3(e.target.value)}></input>
+        <input className="input" onChange={e => setPlayer4(e.target.value)}></input>
+      </div>
       <div>
         <button className="button-save" onClick={() => saveNames()}>
           Save Names

@@ -15,6 +15,12 @@
     font-size: larger;
 }
 
+.input {
+    margin: 5px;
+    width: 200px;
+    font-size: medium;
+}
+
 .button-save {
     color: black;
     margin: 10px 0px 0px 0px;

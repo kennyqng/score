@@ -29,7 +29,7 @@ function Log(props) {
         <tbody>
           <tr className="header-names">
             {names.map(name => {
-              return <td>{name}</td>
+              return <td>{name}</td>;
             })}
           </tr>
           <tr className="header-total">
@@ -37,20 +37,21 @@ function Log(props) {
               return <td className="column-header">{item}</td>;
             })}
           </tr>
-          <div></div>
-          {props.arr
-            .slice(0)
-            .reverse()
-            .map(item => {
-              return (
-                <tr className="table">
-                  <td className="column">{item[0]}</td>
-                  <td className="column">{item[1]}</td>
-                  <td className="column">{item[2]}</td>
-                  <td className="column">{item[3]}</td>
-                </tr>
-              );
-            })}
+          <div>
+            {props.arr
+              .slice(0)
+              .reverse()
+              .map(item => {
+                return (
+                  <tr className="table">
+                    <td className="column">{item[0]}</td>
+                    <td className="column">{item[1]}</td>
+                    <td className="column">{item[2]}</td>
+                    <td className="column">{item[3]}</td>
+                  </tr>
+                );
+              })}
+          </div>
         </tbody>
       </table>
     </div>
