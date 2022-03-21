@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import NavBar from "../Navbar/Navbar";
 import Add from "../Add/Add";
 import "./Home.css";
 

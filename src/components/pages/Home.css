@@ -1,6 +1,5 @@
 .App {
     text-align: center;
-    background-color: #282c34;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,3 +8,9 @@
     font-size: calc(10px + 2vmin);
     color: white;
   }
+
+  /* body {
+    background: url("././assets/suits-iphone-13-wp.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  } */
