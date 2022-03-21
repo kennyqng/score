@@ -4,15 +4,13 @@
     display: inline-block;
     flex-direction: column;
     align-items: center;
+    color: #77938e;
 }
-.instruction {
-    color: white;
-}
+
 
 .name-field {
     display: flex;
     height: 80px;
-    color: white;
 
 }
 .name {
@@ -23,6 +21,9 @@
 .input {
     margin: 5px;
     width: 200px;
+    background-color: #394745;
+    color: #77938e;
+    border: none;
     font-size: medium;
 }
 
@@ -31,8 +32,18 @@
     margin: 20px 0px 0px 0px;
     width: 150px;
     height: 50px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4FA255;
+    color: #ABD5AF;
     font-size: large;
 }
 .button-delete {
     margin: 200px 0px 30px 0px;
+    /* border: none; */
+    background-color: #394745;
+    color:#4FA255;
+}
+.author {
+    color: #2c3735;
 }

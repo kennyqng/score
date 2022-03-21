@@ -3,7 +3,6 @@
     height: 50px;
     display: inline;
     flex-direction: column;
-    color: black;
 }
 ul {
     list-style-type: none;
@@ -11,15 +10,16 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: none;
-    color: white;
   }
   .home {
       float: left;
       padding: 10px 0px 5px 20px ;
-      color: white;
+      color: #2c3735;
+      text-decoration: none;
   }
   .link-setting {
       float: right;
       padding: 10px 20px 5px 10px ;
-      color: white;
+      color: #2c3735; 
+      text-decoration: none;
   }

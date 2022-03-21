@@ -3,32 +3,33 @@
 }
 .column-header {
   width: 70px;
+  padding: 0px;
   border-style: solid;
-  border-color: white;
-  background-color: white;
-  color: black;
+  border-color: #394745;
+  background-color: #394745;
+  color: #ABD5AF;
   font-weight: bold;
 }
 .red-column-header {
   width: 70px;
   border-style: solid;
-  border-color: white;
-  background-color: white;
-  color: red;
+  border-color: #394745;
+  background-color: #394745;
+  color: #a24f4f;
   font-weight: bold;
 }
 .column {
   width: 70px;
   justify-content: center;
   border-bottom-style: solid;
-  border-color: white;
+  border-color: #394745;
 }
 .red-column {
   width: 70px;
   justify-content: center;
   border-bottom-style: solid;
-  border-color: white;
-  color: rgb(255, 144, 144);
+  border-color: #394745;
+  color: #ff7979;
 }
 .header-names {
   font-size: large;
