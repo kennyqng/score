@@ -5,6 +5,7 @@ import "./Home.css";
 function Home () {
     return (
         <div>
+            <div className="title"><p className="title-text">Score</p></div>
             <Add></Add>
         </div>
     );
