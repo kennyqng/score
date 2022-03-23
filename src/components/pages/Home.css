@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: #D7DEDD;
+    color: rgb(255, 255, 255);
   }
   .title {
     margin: 0px;
@@ -20,9 +20,3 @@
     padding: 0px;
     color: rgb(171, 131, 0);
   }
-
-  /* body {
-    background: url("././assets/suits-iphone-13-wp.png");
-    background-repeat: no-repeat;
-    background-position: center;
-  } */

@@ -35,7 +35,7 @@ function Add() {
 
   return (
     <div className="Add">
-      <p className={total ===  0? "sum-text" : "sum-text-red"}>SUM = {isNaN(total) ? 0 : total}</p>
+      <p className={total ===  0? "sum-text" : "sum-text-red"}>Sum: {isNaN(total) ? 0 : total}</p>
       <div className="control">
         <div className="player-control"><p className="playerName" >{names[0]}</p>
           <button className="adjust"

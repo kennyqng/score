@@ -7,7 +7,7 @@
   border-style: solid;
   border-color: #394745;
   background-color: #394745;
-  color: #ABD5AF;
+  /* color: #ABD5AF; */
   font-weight: bold;
 }
 .red-column-header {
@@ -15,7 +15,7 @@
   border-style: solid;
   border-color: #394745;
   background-color: #394745;
-  color: #a24f4f;
+  color: #ff7979;
   font-weight: bold;
 }
 .column {
