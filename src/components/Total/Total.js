@@ -27,7 +27,7 @@ function Total (props) {
         <div className="Total">
             <tr className="header-names">
             {names.map(name => {
-              return <td>{name}</td>;
+              return <td className="player-name">{name}</td>;
             })}
           </tr>
           <tr className="header-total">

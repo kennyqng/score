@@ -29,12 +29,7 @@ function Log(props) {
         <tbody>
           <tr className="header-names">
             {names.map(name => {
-              return <td>{name}</td>;
-            })}
-          </tr>
-          <tr className="header-total">
-            {total().map(item => {
-              return <td className= {item < 0 ? 'red-column-header' : 'column-header'} >{item}</td>;
+              return <td className="log-name">{name}</td>;
             })}
           </tr>
             {props.arr

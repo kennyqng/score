@@ -1,22 +1,9 @@
 .table {
   width: 300px;
 }
-.column-header {
-  width: 70px;
-  padding: 0px;
-  border-style: solid;
-  border-color: #394745;
-  background-color: #394745;
-  /* color: #ABD5AF; */
-  font-weight: bold;
-}
-.red-column-header {
-  width: 70px;
-  border-style: solid;
-  border-color: #394745;
-  background-color: #394745;
-  color: #ff7979;
-  font-weight: bold;
+.log-name {
+  padding: 8px 0px 4px 0px;
+  font-size: medium; 
 }
 .column {
   width: 70px;
@@ -30,7 +17,4 @@
   border-bottom-style: solid;
   border-color: #394745;
   color: #ff7979;
-}
-.header-names {
-  font-size: large;
 }

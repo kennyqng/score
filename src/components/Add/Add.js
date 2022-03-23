@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Log from "../Log/Log";
+import Total from "../Total/Total";
 import "./Add.css";
 
 function Add() {
@@ -35,7 +36,7 @@ function Add() {
 
   return (
     <div className="Add">
-      <p className={total ===  0? "sum-text" : "sum-text-red"}>Sum: {isNaN(total) ? 0 : total}</p>
+      <Total arr={local}/>
       <div className="control">
         <div className="player-control"><p className="playerName" >{names[0]}</p>
           <button className="adjust"
@@ -110,7 +111,7 @@ function Add() {
           </button>
         </div>
       </div>
-
+      <p className={total ===  0? "sum-text" : "sum-text-red"}>Sum: {isNaN(total) ? 0 : total}</p>
       <button className="submit" onClick={() => handleSubmit()}>
         Submit
       </button>

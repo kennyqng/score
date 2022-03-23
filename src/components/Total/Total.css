@@ -1,24 +1,26 @@
 .Total {
-    margin: 15px;
+  margin: 32px 0px 0px 0px;
+    
 }
-
-.table {
-    width: 300px;
-  }
+.header-names {
+  width: 70px;
+  padding: 20px;
+  background-color: rgb(57, 71, 69, 0.8);
+  font-size: large; 
+}
+.player-name {
+  padding: 8px 0px 4px 0px;
+}
 .column-header {
-    width: 70px;
-    padding: 0px;
-    border-style: solid;
-    border-color: #394745;
-    background-color: #394745;
-    color: #ABD5AF;
-    font-weight: bold;
+  width: 80px;
+  padding: 0px 0px 8px 0px;
+  background-color: rgb(57, 71, 69, 0.8);
+  font-weight: bold;
   }
-  .red-column-header {
-    width: 70px;
-    border-style: solid;
-    border-color: #394745;
-    background-color: #394745;
-    color: #a24f4f;
-    font-weight: bold;
-  }
+.red-column-header {
+  width: 70px;
+  padding: 0px 0px 8px 0px;
+  background-color: rgb(57, 71, 69, 0.8);
+  font-weight: bold;
+  color: #ff7979;
+}
