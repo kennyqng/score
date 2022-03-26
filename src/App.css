@@ -1,17 +1,7 @@
-/* .App {
-  text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
-
-.App-link {
-  color: #61dafb;
+.App {
+  font-family:  'Quicksand', sans-serif, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 body {
@@ -21,7 +11,7 @@ body {
   background-position: center top;
 
   text-align: center;
-  background-color: none;
+  background-color: #3F5350;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
