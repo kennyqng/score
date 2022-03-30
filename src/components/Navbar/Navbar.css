@@ -13,19 +13,19 @@ ul {
   }
   .link-home {
       float: left;
-      padding: 10px 40px 5px 20px ;
+      padding: 10px 10px 5px 20px ;
       color: #4FA255;
       text-decoration: none;
   }
   .link-edit {
     float: left;
-    padding: 10px 40px 5px 40px ;
+    padding: 10px 10px 5px 10px ;
     color: #4FA255; 
     text-decoration: none;
   }
   .link-setting {
       float: left;
-      padding: 10px 20px 5px 40px ;
+      padding: 10px 20px 5px 10px ;
       color: #4FA255; 
       text-decoration: none;
   }
