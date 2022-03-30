@@ -1,12 +1,11 @@
 .setting {
-    width: 100%;
+    width: 350px;
     text-align: center;
     display: inline-block;
     flex-direction: column;
     align-items: center;
     color: #bdeee6;
 }
-
 
 .name-field {
     display: flex;
@@ -43,6 +42,6 @@
     color:#d56161;
 }
 .author {
-    color: #4FA255;
+    color: #1f2625;
     font-size: medium;
 }

@@ -1,9 +1,32 @@
-.table {
+.log {
+  text-align: center;
+}.table {
   width: 300px;
+}
+.header-names {
+  justify-content: center;
 }
 .log-name {
   padding: 8px 0px 4px 0px;
-  font-size: medium; 
+  font-size: medium;
+  width: 70px;
+  justify-content: center;
+  border-bottom-style: solid;
+  border-color: #394745;
+}
+.edit-container {
+  width: 298px;
+  height: 30px;
+  margin: 0px;
+  /* background-color: #394745; */
+  padding-top: 0px;
+}
+.edit-link {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: medium;
+  color: #4FA255;
+  float: left;
 }
 .column {
   width: 70px;

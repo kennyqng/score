@@ -1,0 +1,30 @@
+.edit {
+    justify-content: center;
+    width: 350px;
+}
+
+.edit-input {
+    width: 70px;
+}
+
+.update-button {
+    margin: 10px;
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4FA255;
+    color: #c8ffce;
+    font-size: medium;
+}
+.cancel-button {
+    margin: 10px;
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4FA255;
+    color: #c8ffce;
+    font-size: medium;
+    background-color: #ff7979;
+}

@@ -26,7 +26,7 @@ function Add() {
     if (total === 0) {
       const play = [number1, number2, number3, number4];
       console.log(play);
-      setLocal(arr => [...arr, play]);
+      setLocal(arr => [play, ...arr]);
       setNumber1(0);
       setNumber2(0);
       setNumber3(0);

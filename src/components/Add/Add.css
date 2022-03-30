@@ -1,5 +1,6 @@
 .Add {
     text-align: center;
+    width: 350px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
