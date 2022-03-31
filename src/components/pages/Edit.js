@@ -20,10 +20,11 @@ function Edit() {
 
   const [query, setQuery] = useState([]);
 
-  // const [row, setRow] = useState([]);
+  const [row, setRow] = useState([]);
 
   function addQuery (index1, index2, value) {
     if(!isNaN(value)) {
+      setRow(arr => [...arr, index1]);
       setQuery(arr => [...arr, [index1, index2, value]])
       console.log(query);
     }
@@ -32,29 +33,29 @@ function Edit() {
     local[i1][i2] = parseInt(val);
     // setRow(arr => [...arr, i1]);
     // console.log("row " + i1);
-    localStorage.setItem("scoreData", JSON.stringify(local));
   }
-  // function checkRowSum() {
-  //   let pass = true;
-  //   row.map(row =>{
-  //     const sum = local[row][0] + local[row][1] + local[row][2] + local[row][3];
-  //     console.log("row" + local[row][0] + " " + local[row][1] + " " + local[row][2] + " " + local[row][3])
-  //     if (sum !== 0) {
-  //       pass = false;
-  //       alert("sum does not add up at " + local[row][0] + " " + local[row][1] + " "  + local[row][2] + " "  + local[row][3])
-  //     }
-  //   });
-  //   return pass;
-  // }
+  function checkRowSum() {
+    let pass = true;
+    row.map(row =>{
+      const sum = local[row][0] + local[row][1] + local[row][2] + local[row][3];
+      console.log("row" + local[row][0] + " " + local[row][1] + " " + local[row][2] + " " + local[row][3])
+      if (sum !== 0) {
+        pass = false;
+        alert("sum does not add up at " + local[row][0] + " " + local[row][1] + " "  + local[row][2] + " "  + local[row][3])
+      }
+    });
+    return pass;
+  }
   function handleSubmit () {
     if(query.length > 0) {
       query.map(param => {
         updateLocal(param);
       });
-      // if(checkRowSum()) {
-      //   console.log(local);
-      // }
-      navigate("/");
+      if(checkRowSum()) {
+        console.log(local);
+        localStorage.setItem("scoreData", JSON.stringify(local));
+        navigate("/");
+      }
     } else alert("no changes to submit!")
   }
   function handleCancel () {
