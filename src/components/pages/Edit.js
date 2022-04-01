@@ -10,12 +10,7 @@ function Edit() {
     return initialValue || [];
   });
 
-  let names = JSON.parse(localStorage.getItem("storedNames")) || [
-    "p1",
-    "p2",
-    "p3",
-    "p4"
-  ];
+  let names = JSON.parse(localStorage.getItem("storedNames")) || [ "p1", "p2", "p3", "p4"  ];
   let navigate = useNavigate();
 
   const [query, setQuery] = useState([]);
@@ -24,8 +19,16 @@ function Edit() {
 
   function addQuery (index1, index2, value) {
     if(!isNaN(value)) {
-      setRow(arr => [...arr, index1]);
       setQuery(arr => [...arr, [index1, index2, value]])
+      let duplicate = false;
+      for(let i = 0; i < row.length; i++) {
+        if(row[i] === index1){
+          duplicate = true;
+        }  
+      }
+      if (!duplicate) {
+        setRow(arr => [...arr, index1]);
+      }
       console.log(query);
     }
   };
