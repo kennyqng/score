@@ -17,15 +17,15 @@ ul {
       color: #4FA255;
       text-decoration: none;
   }
-  .link-edit {
-    float: left;
-    padding: 10px 10px 5px 10px ;
-    color: #4FA255; 
-    text-decoration: none;
-  }
   .link-setting {
-      float: left;
-      padding: 10px 20px 5px 10px ;
+      float: right;
+      padding: 10px 20px 5px 5px ;
       color: #4FA255; 
       text-decoration: none;
+  }
+  .link-edit {
+    float: right;
+    padding: 10px 5px 5px 5px ;
+    color: #4FA255; 
+    text-decoration: none;
   }

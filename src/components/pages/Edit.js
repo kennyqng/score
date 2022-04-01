@@ -9,17 +9,20 @@ function Edit() {
     const initialValue = JSON.parse(saved);
     return initialValue || [];
   });
-
+  //get player names from memory, else load default
   let names = JSON.parse(localStorage.getItem("storedNames")) || [ "p1", "p2", "p3", "p4"  ];
+  //for when need to redirect back to home
   let navigate = useNavigate();
-
+  //query of indexes and new edited values
   const [query, setQuery] = useState([]);
-
+  //array of indexes for row that have been edited
   const [row, setRow] = useState([]);
-
+  //function to add indexes to query, add indexes to edited 'row' array
   function addQuery (index1, index2, value) {
+    //only add real numbers
     if(!isNaN(value)) {
       setQuery(arr => [...arr, [index1, index2, value]])
+      //to avoid duplicate added to row array
       let duplicate = false;
       for(let i = 0; i < row.length; i++) {
         if(row[i] === index1){
@@ -27,40 +30,43 @@ function Edit() {
         }  
       }
       if (!duplicate) {
+        //add to row if not a duplicate
         setRow(arr => [...arr, index1]);
       }
-      console.log(query);
     }
   };
+  //update new value in score
   function updateLocal([i1, i2, val]) {
     local[i1][i2] = parseInt(val);
-    // setRow(arr => [...arr, i1]);
-    // console.log("row " + i1);
   }
+  //validate sum to be zero
   function checkRowSum() {
     let pass = true;
     row.map(row =>{
       const sum = local[row][0] + local[row][1] + local[row][2] + local[row][3];
-      console.log("row" + local[row][0] + " " + local[row][1] + " " + local[row][2] + " " + local[row][3])
       if (sum !== 0) {
         pass = false;
-        alert("sum does not add up at " + local[row][0] + " " + local[row][1] + " "  + local[row][2] + " "  + local[row][3])
+        alert("This row does not add up to 0:\n [" + local[row][0] + "] [" + local[row][1] + "] ["  + local[row][2] + "] ["  + local[row][3] + "]")
       }
     });
     return pass;
   }
+  //on submit: update score locally, validate edited row to sum zero, only then update database
   function handleSubmit () {
     if(query.length > 0) {
       query.map(param => {
         updateLocal(param);
       });
+      //validate edited row to sum to zero
       if(checkRowSum()) {
-        console.log(local);
+        //update database
         localStorage.setItem("scoreData", JSON.stringify(local));
+        //redirect home
         navigate("/");
       }
     } else alert("no changes to submit!")
   }
+  //cancel editing
   function handleCancel () {
     navigate("/");
   }
