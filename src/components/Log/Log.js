@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button, Slider, Box, Grid, Icon } from "@mui/material/";
 import "./Log.css";
 
 function Log(props) {
@@ -25,47 +26,51 @@ function Log(props) {
   ];
 
   return (
-    <div className="log">
-      <table>
-        <tbody>
-          <tr className="header-names">
-            {names.map(name => {
+    <div>
+      <div className="edit-link">
+      <Link to="/edit">
+        <Icon>edit</Icon>
+      </Link>        
+      </div>
+
+      <Box className="log-container" borderRadius={10}>
+        <div className="edit-container"></div>
+        <table>
+          <tbody>
+            <tr className="header-names">
+              {names.map(name => {
+                return (
+                  <td className="log-name" key={name}>
+                    {name}
+                  </td>
+                );
+              })}
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            {props.arr.map((item, index) => {
               return (
-                <td className="log-name" key={name}>
-                  {name}
-                </td>
+                <tr className="table">
+                  <td className={item[0] < 0 ? "red-column" : "column"}>
+                    {item[0]}
+                  </td>
+                  <td className={item[1] < 0 ? "red-column" : "column"}>
+                    {item[1]}
+                  </td>
+                  <td className={item[2] < 0 ? "red-column" : "column"}>
+                    {item[2]}
+                  </td>
+                  <td className={item[3] < 0 ? "red-column" : "column"}>
+                    {item[3]}
+                  </td>
+                </tr>
               );
             })}
-          </tr>
-        </tbody>
-      </table>
-      {/* <div className="edit-container">
-        <Link to="/edit" className="edit-link">
-          Edit
-        </Link>
-      </div> */}
-      <table>
-        <tbody>
-          {props.arr.map((item, index) => {
-            return (
-              <tr className="table">
-                <td className={item[0] < 0 ? "red-column" : "column"}>
-                  {item[0]}
-                </td>
-                <td className={item[1] < 0 ? "red-column" : "column"}>
-                  {item[1]}
-                </td>
-                <td className={item[2] < 0 ? "red-column" : "column"}>
-                  {item[2]}
-                </td>
-                <td className={item[3] < 0 ? "red-column" : "column"}>
-                  {item[3]}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </Box>
     </div>
   );
 }

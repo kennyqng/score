@@ -1,12 +1,15 @@
 .Total {
-  margin: 32px 0px 0px 0px;
-    
+  margin: 0px 0px 0px 0px;
+  
 }
 .total-names {
-  width: 70px;
+  width: 280px;
   padding: 20px;
-  background-color: rgb(57, 71, 69, 0.8);
+  background: rgb(101,206,232);
+  background: linear-gradient(124deg, rgba(101,206,232,1) 38%, rgba(128,0,255,1) 91%);
   font-size: large; 
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 .total-name {
   padding: 8px 0px 4px 0px;
@@ -14,13 +17,13 @@
 .total-column-header {
   width: 80px;
   padding: 0px 0px 8px 0px;
-  background-color: rgb(57, 71, 69, 0.8);
+  /* background-color: rgb(57, 71, 69, 0.8); */
   font-weight: bold;
   }
 .red-total-column-header {
   width: 70px;
   padding: 0px 0px 8px 0px;
-  background-color: rgb(57, 71, 69, 0.8);
+  /* background-color: rgb(57, 71, 69, 0.8); */
   font-weight: bold;
   color: #ff7979;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, Slider, Box, Grid, Icon } from "@mui/material/";
 import "./Total.css";
 
 function Total (props) {
@@ -25,7 +26,8 @@ function Total (props) {
 
     return (
         <div className="Total">
-            <tr className="total-names">
+          <Box className="total-names" borderRadius={10}>
+            <tr >
             {names.map(name => {
               return <td className="total-name">{name}</td>;
             })}
@@ -35,6 +37,7 @@ function Total (props) {
               return <td className= {item < 0 ? 'red-total-column-header' : 'total-column-header'} >{item}</td>;
             })}
           </tr>
+          </Box>
         </div>
     );
 }

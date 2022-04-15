@@ -1,18 +1,24 @@
 .log {
-  text-align: center;
+  /* text-align: center; */
 }.table {
   width: 300px;
+}
+.log-container {
+  /* width:280px; */
+  background-color: #F2F5FA;
+  padding: 10% 5% 10% 5% ;
+  margin: 20px 0px 20px 0px;
 }
 .header-names {
   justify-content: center;
 }
 .log-name {
-  padding: 8px 0px 4px 0px;
+  /* padding: 8px 0px 4px 0px; */
   font-size: medium;
   width: 70px;
   justify-content: center;
-  border-bottom-style: solid;
-  border-color: #394745;
+  /* border-bottom-style: solid; */
+  /* border-color: #394745; */
 }
 .edit-container {
   width: 298px;
@@ -25,19 +31,18 @@
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   font-size: medium;
-  color: #4FA255;
-  float: left;
+  float: right;
 }
 .column {
   width: 70px;
   justify-content: center;
-  border-bottom-style: solid;
-  border-color: #394745;
+  /* border-bottom-style: solid; */
+  /* border-color: #394745; */
 }
 .red-column {
   width: 70px;
   justify-content: center;
-  border-bottom-style: solid;
-  border-color: #394745;
+  /* border-bottom-style: solid; */
+  /* border-color: #394745; */
   color: #ff7979;
 }

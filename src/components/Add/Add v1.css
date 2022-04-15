@@ -6,34 +6,28 @@
     flex-direction: column;
     align-items: center;
     font-size: calc(10px + 2vmin);
-    color: #424647;
-}
-.control {
-  width:280px;
-  background-color: #F2F5FA;
-  padding: 10% 5% 10% 5% ;
-  margin: 20px 0px 20px 0px;
+    color: #bdeee6;
 }
 .sum-text {
   font-size: large;
   padding: 4px 0px 4px 0px;
   margin: 0px 0px 8px 0px;
+  width: 298px;
+  background-color: rgb(57, 71, 69, 0.8);
+  color: #4FA255;
 }
 .sum-text-red {
   font-size: large;
   padding: 4px 0px 4px 0px;
   margin: 0px 0px 8px 0px;
+  width: 298px;
+  background-color: rgb(57, 71, 69, 0.8);
   color: #ff7979;
 }
-.control-name {
-  text-align: left;
-  font-size: large;
-  font-weight: bold;
-}
-.control-point {
-  text-align: right;
-  font-size: medium;
-  font-weight: bold;
+.control {
+  display: block;
+  text-align: center;
+  margin:  32px 0px 16px 0px;
 }
 .player-control {
   margin-bottom: 5px;
@@ -42,6 +36,8 @@
   width: 45px;
   height: 45px;
   border-radius: 8px;
+  background-color: #4FA255;
+  color: #c8ffce;
   font-size: larger;
   text-align: center;
   border: none;
@@ -56,6 +52,7 @@
   background-color: #394745;
   text-align: center;
   font-size: larger;
+  color: #9ac2bb;
 }
 .red-number {
   margin: 0px 20px 0px 20px;
@@ -76,8 +73,8 @@
   margin: 8px 0px 30px ;
   border-radius: 8px;
   border: none;
-  background-color: #424647;
-  color: #E5E5E5;
+  background-color: #4FA255;
+  color: #c8ffce;
 }
 .playerName {
   /* display: none; */

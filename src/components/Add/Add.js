@@ -2,15 +2,20 @@ import { useEffect, useState } from "react";
 import Log from "../Log/Log";
 import Total from "../Total/Total";
 import "./Add.css";
+import { Button, Slider, Box, Grid, Icon } from "@mui/material/";
 
 function Add() {
-  const [number1, setNumber1] = useState(0);
-  const [number2, setNumber2] = useState(0);
-  const [number3, setNumber3] = useState(0);
-  const [number4, setNumber4] = useState(0);
+  const [number1, setNumber1] = useState();
+  const [number2, setNumber2] = useState();
+  const [number3, setNumber3] = useState();
+  const [number4, setNumber4] = useState();
   const [total, setTotal] = useState(number1 + number2 + number3 + number4);
-  let names = JSON.parse(localStorage.getItem("storedNames")) || ["Player 1", "Player 2", "Player 3", "Player 4"];
-  
+  let names = JSON.parse(localStorage.getItem("storedNames")) || [
+    "Player 1",
+    "Player 2",
+    "Player 3",
+    "Player 4"
+  ];
 
   useEffect(() => {
     localStorage.setItem("scoreData", JSON.stringify(local));
@@ -22,103 +27,207 @@ function Add() {
     return initialValue || [];
   });
 
-  function handleSubmit () {
+  function handleSubmit() {
     if (total === 0) {
       const play = [number1, number2, number3, number4];
       console.log(play);
       setLocal(arr => [play, ...arr]);
-      setNumber1(0);
-      setNumber2(0);
-      setNumber3(0);
-      setNumber4(0);
+      setNumber1();
+      setNumber2();
+      setNumber3();
+      setNumber4();
     } else alert("Cannot submit. Sum of scores is not zero.");
   }
 
   return (
-    <div className="Add">
-      <Total arr={local}/>
-      <div className="control">
-        <div className="player-control"><p className="playerName" >{names[0]}</p>
-          <button className="adjust"
-            onClick={() => setNumber1(number1 != null ? number1 - 1 : 0 - 1)}
-          >
-            -
-          </button>
-          <input
-            className={number1 < 0 ? "red-number" :"number"}
-            type="number"
-            value={number1}
-            onChange={e => setNumber1(+e.target.value)}
-          />
-          <button className="adjust"
-            onClick={() => setNumber1(number1 != null ? number1 + 1 : 0 + 1)}
-          >
-            +
-          </button>
+    <Box className="Add" sx={{ width: 300 }}>
+      <Total arr={local} />
+      <Box className="control" borderRadius={10}>
+
+        {/* player 1 */}
+        <Grid container spacing={0}>
+          <Grid className="control-name" item xs={8}>
+            {names[0]}
+          </Grid>
+          <Grid className="control-point" item xs={4}>
+            {number1}
+          </Grid>
+        </Grid>
+        <div className="player-control">
+          <p className="playerName"></p>
         </div>
-        <div className="player-control"><p className="playerName" >{names[1]}</p>
-          <button className="adjust"
-            onClick={() => setNumber2(number2 != null ? number2 - 1 : 0 - 1)}
-          >
-            -
-          </button>
-          <input 
-            className={number2 < 0 ? "red-number" :"number"}
-            type="number"
-            value={number2}
-            onChange={e => setNumber2(+e.target.value)}
-          />
-          <button className="adjust"
-            onClick={() => setNumber2(number2 != null ? number2 + 1 : 0 + 1)}
-          >
-            +
-          </button>
-        </div>
-        <div className="player-control"><p className="playerName" >{names[2]}</p>
-          <button className="adjust"
-            onClick={() => setNumber3(number3 != null ? number3 - 1 : 0 - 1)}
-          >
-            -
-          </button>
-          <input
-            className={number3 < 0 ? "red-number" :"number"}
-            type="number"
-            value={number3}
-            onChange={e => setNumber3(+e.target.value)}
-          />
-          <button className="adjust"
-            onClick={() => setNumber3(number3 != null ? number3 + 1 : 0 + 1)}
-          >
-            +
-          </button>
-        </div>
-        <div className="player-control"><p className="playerName" >{names[3]}</p>
-          <button className="adjust"
-            onClick={() => setNumber4(number4 != null ? number4 - 1 : 0 - 1)}
-          >
-            -
-          </button>
-          <input
-            className={number4 < 0 ? "red-number" :"number"}
-            type="number"
-            value={number4}
-            onChange={e => setNumber4(+e.target.value)}
-          />
-          <button className="adjust"
-            onClick={() => setNumber4(number4 != null ? number4 + 1 : 0 + 1)}
-          >
-            +
-          </button>
-        </div>
-      </div>
-      <p className={total ===  0? "sum-text" : "sum-text-red"}>Sum: {isNaN(total) ? 0 : total}</p>
+        <Grid container spacing={0}>
+          <Grid item xs={2}>
+            <Button
+              className="adjust"
+              variant="text"
+              onClick={() => setNumber1(number1 != null ? number1 - 1 : 0 - 1)}
+            >
+              <Icon>remove</Icon>
+            </Button>
+          </Grid>
+          <Grid item xs={8}>
+            <Slider
+              size="small"
+              min={-100}
+              max={100}
+              defaultValue={0}
+              value={number1}
+              onChange={e => setNumber1(parseInt(e.target.value))}
+            />
+          </Grid>
+          <Grid item xs={2}>
+            <Button
+              className="adjust"
+              variant="text"
+              onClick={() => setNumber1(number1 != null ? number1 + 1 : 0 + 1)}
+            >
+              <Icon>add</Icon>
+            </Button>
+          </Grid>
+        </Grid>
+
+        {/* player 2 */}
+        <Grid container spacing={0}>
+           <Grid className="control-name" item xs={8}>
+             {names[1]}
+           </Grid>
+           <Grid className="control-point" item xs={4}>
+             {number2}
+           </Grid>
+         </Grid>
+         <div className="player-control">
+           <p className="playerName"></p>
+         </div>
+         <Grid container spacing={0}>
+           <Grid item xs={2}>
+             <Button
+               className="adjust"
+               variant="text"
+               onClick={() => setNumber2(number2 != null ? number2 - 1 : 0 - 1)}
+             >
+               <Icon>remove</Icon>
+             </Button>
+           </Grid>
+           <Grid item xs={8}>
+             <Slider
+               size="small"
+               min={-100}
+               max={100}
+               defaultValue={0}
+               value={number2}
+               onChange={e => setNumber2(parseInt(e.target.value))}
+             />
+           </Grid>
+           <Grid item xs={2}>
+             <Button
+               className="adjust"
+               variant="text"
+               onClick={() => setNumber2(number2 != null ? number2 + 1 : 0 + 1)}
+             >
+               <Icon>add</Icon>
+             </Button>
+           </Grid>
+         </Grid>
+
+        {/* player 3 */}
+        <Grid container spacing={0}>
+           <Grid className="control-name" item xs={8}>
+             {names[2]}
+           </Grid>
+           <Grid className="control-point" item xs={4}>
+             {number3}
+           </Grid>
+         </Grid>
+         <div className="player-control">
+           <p className="playerName"></p>
+         </div>
+         <Grid container spacing={0}>
+           <Grid item xs={2}>
+             <Button
+               className="adjust"
+               variant="text"
+               onClick={() => setNumber3(number3 != null ? number3 - 1 : 0 - 1)}
+             >
+               <Icon>remove</Icon>
+             </Button>
+           </Grid>
+           <Grid item xs={8}>
+             <Slider
+               size="small"
+               min={-100}
+               max={100}
+               defaultValue={0}
+               value={number3}
+               onChange={e => setNumber3(parseInt(e.target.value))}
+             />
+           </Grid>
+           <Grid item xs={2}>
+             <Button
+               className="adjust"
+               variant="text"
+               onClick={() => setNumber3(number3 != null ? number3 + 1 : 0 + 1)}
+             >
+               <Icon>add</Icon>
+             </Button>
+           </Grid>
+         </Grid>
+
+        {/* player 4 */}
+        <Grid container spacing={0}>
+           <Grid className="control-name" item xs={8}>
+             {names[3]}
+           </Grid>
+           <Grid className="control-point" item xs={4}>
+             {number4}
+           </Grid>
+         </Grid>
+         <div className="player-control">
+           <p className="playerName"></p>
+         </div>
+         <Grid container spacing={0}>
+           <Grid item xs={2}>
+             <Button
+               className="adjust"
+               variant="text"
+               onClick={() => setNumber4(number4 != null ? number4 - 1 : 0 - 1)}
+             >
+               <Icon>remove</Icon>
+             </Button>
+           </Grid>
+           <Grid item xs={8}>
+             <Slider
+               size="small"
+               min={-100}
+               max={100}
+               defaultValue={0}
+               value={number4}
+               onChange={e => setNumber4(parseInt(e.target.value))}
+             />
+           </Grid>
+           <Grid item xs={2}>
+             <Button
+               className="adjust"
+               variant="text"
+               onClick={() => setNumber4(number4 != null ? number4 + 1 : 0 + 1)}
+             >
+               <Icon>add</Icon>
+             </Button>
+           </Grid>
+         </Grid>
+      <p className={total === 0 ? "sum-text" : "sum-text-red"}>
+        Sum: {isNaN(total) ? 0 : total}
+      </p>
+
+
+      </Box>
       <button className="submit" onClick={() => handleSubmit()}>
         Submit
       </button>
       <div>
         <Log arr={local} />
       </div>
-    </div>
+    </Box>
   );
 }
 
