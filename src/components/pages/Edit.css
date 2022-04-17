@@ -1,6 +1,7 @@
 .edit {
     justify-content: center;
     width: 350px;
+    color: #394745;
 }
 
 .edit-input {
@@ -13,8 +14,8 @@
     height: 30px;
     border-radius: 8px;
     border: none;
-    background-color: #4FA255;
-    color: #c8ffce;
+    background-color: #394745;
+    color: #E5E5E5;
     font-size: medium;
 }
 .cancel-button {
@@ -23,8 +24,8 @@
     height: 30px;
     border-radius: 8px;
     border: none;
-    background-color: #4FA255;
-    color: #c8ffce;
+    background-color: #394745;
+    color: #E5E5E5;
     font-size: medium;
     background-color: #ff7979;
 }

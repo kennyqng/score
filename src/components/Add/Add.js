@@ -42,7 +42,7 @@ function Add() {
   return (
     <Box className="Add" sx={{ width: 300 }}>
       <Total arr={local} />
-      <Box className="control" borderRadius={10}>
+      <Box className="control" borderRadius={5}>
 
         {/* player 1 */}
         <Grid container spacing={0}>
@@ -218,8 +218,6 @@ function Add() {
       <p className={total === 0 ? "sum-text" : "sum-text-red"}>
         Sum: {isNaN(total) ? 0 : total}
       </p>
-
-
       </Box>
       <button className="submit" onClick={() => handleSubmit()}>
         Submit

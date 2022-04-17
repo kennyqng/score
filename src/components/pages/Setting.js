@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Setting.css";
 
 function Setting(props) {
@@ -52,7 +53,10 @@ function Setting(props) {
           Save Names
         </button>
       </div>
-      <div>
+      <div className="setting-options">
+        <p>
+        <Link to="/edit">Edit current score</Link>
+        </p>
         <button className="button-delete" onClick={() => deleteLocal()}>
           Delete All Scores
         </button>

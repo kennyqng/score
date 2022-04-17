@@ -26,7 +26,7 @@ function Total (props) {
 
     return (
         <div className="Total">
-          <Box className="total-names" borderRadius={10}>
+          <Box className="total-names" borderRadius={5}>
             <tr >
             {names.map(name => {
               return <td className="total-name">{name}</td>;

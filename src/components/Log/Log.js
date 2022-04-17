@@ -26,52 +26,43 @@ function Log(props) {
   ];
 
   return (
-    <div>
+    <Box className="log" sx={{ width: 300 }}>
       <div className="edit-link">
-      <Link to="/edit">
-        <Icon>edit</Icon>
-      </Link>        
+        <Link to="/edit">
+          <Icon>edit</Icon>
+        </Link>
       </div>
 
-      <Box className="log-container" borderRadius={10}>
-        <div className="edit-container"></div>
-        <table>
-          <tbody>
-            <tr className="header-names">
+      <Box className="log-container" borderRadius={5}>
+        <Grid className="header-names" container spacing={0}>
               {names.map(name => {
                 return (
-                  <td className="log-name" key={name}>
+                  <Grid className="log-name" item xs={3} key={name}>
                     {name}
-                  </td>
+                  </Grid>
                 );
               })}
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <tbody>
-            {props.arr.map((item, index) => {
+        {props.arr.map((item, index) => {
               return (
-                <tr className="table">
-                  <td className={item[0] < 0 ? "red-column" : "column"}>
+                <Grid className="table" container spacing={0}>
+                  <Grid className={item[0] < 0 ? "red-column" : "column"} item xs={3}>
                     {item[0]}
-                  </td>
-                  <td className={item[1] < 0 ? "red-column" : "column"}>
+                  </Grid>
+                  <Grid className={item[1] < 0 ? "red-column" : "column"} item xs={3}>
                     {item[1]}
-                  </td>
-                  <td className={item[2] < 0 ? "red-column" : "column"}>
+                  </Grid>
+                  <Grid className={item[2] < 0 ? "red-column" : "column"} item xs={3}>
                     {item[2]}
-                  </td>
-                  <td className={item[3] < 0 ? "red-column" : "column"}>
+                  </Grid>
+                  <Grid className={item[3] < 0 ? "red-column" : "column"} item xs={3}>
                     {item[3]}
-                  </td>
-                </tr>
+                  </Grid>
+                </Grid>
               );
             })}
-          </tbody>
-        </table>
+        </Grid>
       </Box>
-    </div>
+    </Box>
   );
 }
 

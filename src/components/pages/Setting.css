@@ -21,27 +21,32 @@
     margin: 5px;
     width: 200px;
     background-color: #394745;
-    /* color: #bdeee6; */
+    color: #E5E5E5;
     border: none;
     font-size: medium;
 }
-
+.setting-options {
+    display: block;
+    text-align: left;
+    margin: 60px 0px 5px 30px;
+}
 .button-save {
     margin: 20px 0px 0px 0px;
     width: 150px;
     height: 50px;
     border-radius: 8px;
     border: none;
-    /* background-color: #4FA255; */
-    /* color: #c8ffce; */
+    background-color: #424647;
+    color: #E5E5E5;
     font-size: large;
 }
 .button-delete {
-    margin: 150px 0px 5px 0px;
+    margin: 0px 0px 5px 0px;
     background-color: #394745;
     color:#d56161;
 }
 .author {
+    margin: 160px 0px 5px 0px;
     color: #1f2625;
     font-size: medium;
 }
