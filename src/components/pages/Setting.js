@@ -42,7 +42,7 @@ function Setting(props) {
         })}
       </div>
       <div>
-        <p className="instruction">Enter new warriors here:</p>
+        <p className="instruction">Enter new names here:</p>
         <input className="input" onChange={e => setPlayer1(e.target.value)}></input>
         <input className="input" onChange={e => setPlayer2(e.target.value)}></input>
         <input className="input" onChange={e => setPlayer3(e.target.value)}></input>
@@ -54,8 +54,8 @@ function Setting(props) {
         </button>
       </div>
       <div className="setting-options">
-        <p>
-        <Link to="/edit">Edit current score</Link>
+        <p className="setting-edit-button">
+        <Link className="setting-edit" to="/edit">Edit current score</Link>
         </p>
         <button className="button-delete" onClick={() => deleteLocal()}>
           Delete All Scores

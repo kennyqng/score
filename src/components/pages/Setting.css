@@ -18,9 +18,10 @@
 }
 
 .input {
+    border-radius: 5px;
     margin: 5px;
     width: 200px;
-    background-color: #394745;
+    background-color: #424647;
     color: #E5E5E5;
     border: none;
     font-size: medium;
@@ -29,6 +30,10 @@
     display: block;
     text-align: left;
     margin: 60px 0px 5px 30px;
+}
+.setting-edit {
+    color: #424647;
+    /* background-color: #424647; */
 }
 .button-save {
     margin: 20px 0px 0px 0px;
@@ -41,12 +46,13 @@
     font-size: large;
 }
 .button-delete {
+    border-radius: 5px;
     margin: 0px 0px 5px 0px;
-    background-color: #394745;
+    background-color: #424647;
     color:#d56161;
 }
 .author {
     margin: 160px 0px 5px 0px;
-    color: #1f2625;
+    color: #424647;
     font-size: medium;
 }
