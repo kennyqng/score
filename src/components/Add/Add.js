@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Log from "../Log/Log";
 import Total from "../Total/Total";
-import dealer from "../../assets/Dealer.png";
+import dealer from "../../assets/Dealer.svg";
 import "./Add.css";
 import { Button, Slider, Box, Grid, Icon } from "@mui/material/";
 
@@ -17,7 +17,6 @@ function Add() {
     "Player 3",
     "Player 4"
   ];
-  const [defaultSlider, setDefaultSlider] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("scoreData", JSON.stringify(local));
@@ -36,7 +35,6 @@ function Add() {
       let dealerPiece = currentDealer + 1;
       setCurrentDealer(dealerPiece);
     } else setCurrentDealer(0);
-    console.log("current dealer is " + currentDealer);
   }
 
   function handleSubmit() {
@@ -49,7 +47,6 @@ function Add() {
       setNumber3();
       setNumber4();
       nextDealer();
-      setDefaultSlider(0);
     } else alert("Cannot submit. Sum of scores is not zero.");
   }
 
@@ -85,7 +82,7 @@ function Add() {
               size="small"
               min={-50}
               max={50}
-              defaultValue={defaultSlider}
+              defaultValue={0}
               value={number1}
               onChange={e => setNumber1(parseInt(e.target.value))}
             />
@@ -128,7 +125,7 @@ function Add() {
                size="small"
                min={-50}
                max={50}
-               defaultValue={defaultSlider}
+               defaultValue={0}
                value={number2}
                onChange={e => setNumber2(parseInt(e.target.value))}
              />
@@ -171,7 +168,7 @@ function Add() {
                size="small"
                min={-50}
                max={50}
-               defaultValue={defaultSlider}
+               defaultValue={0}
                value={number3}
                onChange={e => setNumber3(parseInt(e.target.value))}
              />
@@ -214,7 +211,7 @@ function Add() {
                size="small"
                min={-50}
                max={50}
-               defaultValue={defaultSlider}
+               defaultValue={0}
                value={number4}
                onChange={e => setNumber4(parseInt(e.target.value))}
              />
