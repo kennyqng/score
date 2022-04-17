@@ -26,7 +26,7 @@ function Log(props) {
   ];
 
   return (
-    <Box className="log" sx={{ width: 300 }}>
+    <Box className="log" sx={{ width: 320 }}>
       <div className="edit-link">
         <Link to="/edit">
           <Icon>edit</Icon>
