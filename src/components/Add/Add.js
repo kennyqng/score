@@ -55,12 +55,12 @@ function Add() {
       nextDealer();
     } else alert("Cannot submit. Sum of scores is not zero.");
   }
-
+  
   return (
     <Box className="Add" >
       <Total arr={local} />
-      <Box className="control" borderRadius={5}>
-      <p className={total === 0 ? "sum-text" : "sum-text-red"}>
+      <Box className="control">
+      <p className={total === 0 ? "sum-text-blue" : "sum-text"}>
         Sum: {isNaN(total) ? 0 : total}
       </p>
         {/* player 1 */}
@@ -68,7 +68,7 @@ function Add() {
           <Grid className="control-name" item xs={8}>
             {names[0]} <img  style={{display: currentDealer === 0 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
           </Grid>
-          <Grid className="control-point" item xs={4}>
+          <Grid className="control-point" style={{color: number1 < 0 ? "#fd5252" : "#424647"}} item xs={4}>
             {number1}
           </Grid>
         </Grid>
@@ -111,7 +111,7 @@ function Add() {
            <Grid className="control-name" item xs={8}>
              {names[1]} <img style={{display: currentDealer === 1 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
            </Grid>
-           <Grid className="control-point" item xs={4}>
+           <Grid className="control-point" style={{color: number2 < 0 ? "#fd5252" : "#424647"}} item xs={4}>
              {number2}
            </Grid>
          </Grid>
@@ -154,7 +154,7 @@ function Add() {
            <Grid className="control-name" item xs={8}>
              {names[2]} <img style={{display: currentDealer === 2 ? "" : "none"}}  alt="dealer icon" src={dealer} ></img>
            </Grid>
-           <Grid className="control-point" item xs={4}>
+           <Grid className="control-point" style={{color: number3 < 0 ? "#fd5252" : "#424647"}} item xs={4}>
              {number3}
            </Grid>
          </Grid>
@@ -197,7 +197,7 @@ function Add() {
            <Grid className="control-name" item xs={8}>
              {names[3]} <img style={{display: currentDealer === 3 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
            </Grid>
-           <Grid className="control-point" item xs={4}>
+           <Grid className="control-point" style={{color: number4 < 0 ? "#fd5252" : "#424647"}} item xs={4}>
              {number4}
            </Grid>
          </Grid>

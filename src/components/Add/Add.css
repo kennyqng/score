@@ -9,6 +9,7 @@
     color: #424647;
 }
 .control {
+  border-radius: 25px 25px 25px 25px;
   width:280px;
   background-color: #F2F5FA;
   padding: 5%;
@@ -18,15 +19,17 @@
   font-size: large;
   margin: 0px 0px 5px 0px;
 }
-.sum-text-red {
+.sum-text-blue {
   font-size: large;
   margin: 0px 0px 5px 0px;
-  color: #fd5252;
+  color: #2196f3;
 }
 .control-name {
   text-align: left;
   font-size: large;
   font-weight: bold;
+  overflow: hidden;  
+  text-overflow: ellipsis;
 }
 .control-point {
   text-align: right;

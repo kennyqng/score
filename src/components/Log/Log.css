@@ -1,4 +1,5 @@
 .log-container {
+  border-radius: 25px 25px 25px 25px;
   width:280px;
   background-color: #F2F5FA;
   padding: 20px ;
@@ -12,6 +13,7 @@
   font-size: large;
   font-weight: bold;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 .edit-link-div {
   margin: 0px 0px 0px 0px;

@@ -33,7 +33,7 @@ function Log(props) {
         </Link>
       </div>
 
-      <Box className="log-container" borderRadius={5}>
+      <Box className="log-container">
         <Grid className="header-names" container spacing={0}>
               {names.map(name => {
                 return (

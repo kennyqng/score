@@ -26,7 +26,7 @@ function Total (props) {
 
     return (
         <div className="Total">
-          <Box className="total-names" borderRadius={5}>
+          <Box className="total-names">
             <Grid className="grid-name-point" container spacing={0} >
             {names.map(name => {
               return<Grid className="total-name" item xs={3} > {name}</Grid>
