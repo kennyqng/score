@@ -6,10 +6,10 @@ import "./Add.css";
 import { Button, Slider, Box, Grid, Icon } from "@mui/material/";
 
 function Add() {
-  const [number1, setNumber1] = useState();
-  const [number2, setNumber2] = useState();
-  const [number3, setNumber3] = useState();
-  const [number4, setNumber4] = useState();
+  const [number1, setNumber1] = useState(0);
+  const [number2, setNumber2] = useState(0);
+  const [number3, setNumber3] = useState(0);
+  const [number4, setNumber4] = useState(0);
   const [total, setTotal] = useState(number1 + number2 + number3 + number4);
   let names = JSON.parse(localStorage.getItem("storedNames")) || [
     "Player 1",
@@ -48,10 +48,10 @@ function Add() {
       const play = [number1, number2, number3, number4];
       console.log(play);
       setLocal(arr => [play, ...arr]);
-      setNumber1();
-      setNumber2();
-      setNumber3();
-      setNumber4();
+      setNumber1(0);
+      setNumber2(0);
+      setNumber3(0);
+      setNumber4(0);
       nextDealer();
     } else alert("Cannot submit. Sum of scores is not zero.");
   }
