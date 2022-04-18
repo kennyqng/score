@@ -28,12 +28,18 @@ function Add() {
     return initialValue || [];
   });
 
-  const [currentDealer, setCurrentDealer] = useState(0);
+  const [currentDealer, setCurrentDealer] = useState(() => {
+    const initialValue = parseInt(localStorage.getItem("dealerPosition"));
+    console.log("value is " + initialValue);
+    return initialValue || 0;
+  });
 
   function nextDealer () {
     if (currentDealer < 3) {
-      let dealerPiece = currentDealer + 1;
-      setCurrentDealer(dealerPiece);
+      let dealerIndex = currentDealer + 1;
+      localStorage.setItem("dealerPosition", dealerIndex);
+      console.log("value is " + dealerIndex);
+      setCurrentDealer(dealerIndex);
     } else setCurrentDealer(0);
   }
 
