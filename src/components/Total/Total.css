@@ -11,21 +11,22 @@
 }
 .total-name {
   font-size: medium; 
-  font-weight: bold;
+  font-weight: 900;
   padding: 8px 0px 4px 0px;
+  overflow: hidden;
 }
 .total-column-header {
   font-size: xx-large; 
   width: 70px;
   padding: 0px 0px 8px 0px;
   /* background-color: rgb(57, 71, 69, 0.8); */
-  font-weight: bold;
+  font-weight: 1000;
   }
 .red-total-column-header {
   font-size: xx-large; 
   width: 70px;
   padding: 0px 0px 8px 0px;
   /* background-color: rgb(57, 71, 69, 0.8); */
-  font-weight: bold;
-  color: #ff7979;
+  font-weight: 1000;
+  color: #fd5252;
 }

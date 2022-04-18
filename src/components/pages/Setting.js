@@ -61,8 +61,8 @@ function Setting(props) {
         <button className="button-delete" onClick={() => deleteLocal()}>
           Delete All Scores
         </button>
-        <p className="author">Kenny Nguyen 2022</p>
       </div>
+      <p className="author">Kenny Nguyen 2022</p>
     </div>
   );
 }

@@ -18,10 +18,10 @@ function Total (props) {
         return playerTotal;
       }
       let names = JSON.parse(localStorage.getItem("storedNames")) || [
-        "p1",
-        "p2",
-        "p3",
-        "p4"
+        "Player 1",
+        "Player 2",
+        "Player 3",
+        "Player 4"
       ];
 
     return (

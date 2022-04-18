@@ -11,12 +11,16 @@
   padding: 0px 0px 4px 0px;
   font-size: large;
   font-weight: bold;
+  overflow: hidden;
 }
-.edit-link {
+.edit-link-div {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   font-size: medium;
   float: right;
+}
+.edit-link {
+  color:#4B1980
 }
 .column {
   justify-content: center;

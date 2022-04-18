@@ -19,16 +19,16 @@ function Log(props) {
     return playerTotal;
   }
   let names = JSON.parse(localStorage.getItem("storedNames")) || [
-    "p1",
-    "p2",
-    "p3",
-    "p4"
+    "player 1",
+    "player 2",
+    "player 3",
+    "player 4"
   ];
 
   return (
     <Box className="log" item sx={{ width: 320 }}>
-      <div className="edit-link">
-        <Link to="/edit">
+      <div className="edit-link-div">
+        <Link className="edit-link" to="/edit">
           <Icon>edit</Icon>
         </Link>
       </div>

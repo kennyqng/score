@@ -14,12 +14,12 @@ ul {
   .link-home {
       float: left;
       padding: 10px 10px 5px 20px ;
-      /* color: #424647; */
+      color: #4B1980;
       text-decoration: none;
   }
   .link-setting {
       float: right;
       padding: 10px 20px 5px 5px ;
-      /* color: #424647;  */
+      color: #4B1980; 
       text-decoration: none;
   }
