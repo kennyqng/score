@@ -11,16 +11,16 @@
 .control {
   width:280px;
   background-color: #F2F5FA;
-  padding: 10% 5% 5% 5% ;
+  padding: 5%;
   margin: 20px 0px 20px 0px;
 }
 .sum-text {
   font-size: large;
-  margin: 0px 0px 8px 0px;
+  margin: 0px 0px 5px 0px;
 }
 .sum-text-red {
   font-size: large;
-  margin: 0px 0px 8px 0px;
+  margin: 0px 0px 0px 0px;
   color: #ff7979;
 }
 .control-name {
@@ -57,7 +57,6 @@
   color: #E5E5E5;
 }
 .playerName {
-  /* display: none; */
   padding: 0px;
   margin: 0px;
   font-size: large;

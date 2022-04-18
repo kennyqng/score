@@ -20,6 +20,7 @@ function Setting(props) {
   function deleteLocal() {
       if (window.confirm("delete all data?") === true) {
           localStorage.removeItem("scoreData");
+          localStorage.removeItem("dealerPosition");
           navigate("/");
       }
   }

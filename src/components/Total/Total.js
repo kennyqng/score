@@ -27,16 +27,16 @@ function Total (props) {
     return (
         <div className="Total">
           <Box className="total-names" borderRadius={5}>
-            <tr >
+            <Grid className="grid-name-point" container spacing={0} >
             {names.map(name => {
-              return <td className="total-name">{name}</td>;
+              return<Grid className="total-name" item xs={3} > {name}</Grid>
             })}
-          </tr>
-          <tr className="header-total">
+          </Grid>
+          <Grid className="header-total" container spacing={0}>
             {total().map(item => {
-              return <td className= {item < 0 ? 'red-total-column-header' : 'total-column-header'} >{item}</td>;
+              return <Grid className={item < 0 ? 'red-total-column-header' : 'total-column-header'} item xs={3} > {item}</Grid>;
             })}
-          </tr>
+          </Grid>
           </Box>
         </div>
     );
