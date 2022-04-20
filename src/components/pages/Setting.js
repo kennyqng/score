@@ -21,6 +21,7 @@ function Setting(props) {
       if (window.confirm("delete all data?") === true) {
           localStorage.removeItem("scoreData");
           localStorage.removeItem("dealerPosition");
+          localStorage.removeItem("roundNumber");
           navigate("/");
       }
   }
