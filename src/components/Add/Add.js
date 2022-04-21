@@ -3,7 +3,7 @@ import Log from "../Log/Log";
 import Total from "../Total/Total";
 import dealer from "../../assets/Dealer.svg";
 import "./Add.css";
-import { Button, Slider, Box, Grid, Icon } from "@mui/material/";
+import { Button, Slider, Box, Grid, Icon, Switch } from "@mui/material/";
 
 function Add() {
   const [number1, setNumber1] = useState(0);
@@ -17,20 +17,27 @@ function Add() {
     "Player 3",
     "Player 4"
   ];
-  const marks = [
+  const [bigWin, setBigWin] = useState(false);
+  const handleSwitch = (event) => {
+    setBigWin(event.target.checked)
+  };
+  const minValue = bigWin? -100: -27;
+  const maxValue= bigWin? 100: 27;
+
+  const marks = bigWin? [
     {
-      value: -50,
-      label: '-50',
+      value: -100,
+      label: '-100',
     },
     {
       value: 0,
       label: '0',
     },
     {
-      value: 50,
-      label: '50',
+      value: 100,
+      label: '100',
     }
-  ];
+  ]: null;
 
   useEffect(() => {
     localStorage.setItem("scoreData", JSON.stringify(local));
@@ -41,39 +48,21 @@ function Add() {
     const initialValue = JSON.parse(saved);
     return initialValue || [];
   });
-
-  const [currentDealer, setCurrentDealer] = useState(() => {
-    const initialValue = parseInt(localStorage.getItem("dealerPosition"));
-    console.log("value is " + initialValue);
-    return initialValue || 0;
-  });
   const [roundCounter, setRoundCounter] = useState(() => {
     const initialValue = parseInt(localStorage.getItem("roundNumber"));
-    console.log("value is " + initialValue);
     return initialValue || 1;
   });
-
-  function nextDealer () {
-    if (currentDealer < 3) {
-      let dealerIndex = currentDealer + 1;
-      localStorage.setItem("dealerPosition", dealerIndex);
-      console.log("value is " + dealerIndex);
-      setCurrentDealer(dealerIndex);
-    } else setCurrentDealer(0);
-  }
 
   function handleSubmit() {
     if (total === 0) {
       const play = [number1, number2, number3, number4];
-      console.log(play);
       setLocal(arr => [play, ...arr]);
       setNumber1(0);
       setNumber2(0);
       setNumber3(0);
       setNumber4(0);
-      nextDealer();
       setRoundCounter(roundCounter + 1);
-      localStorage.setItem("roundNumber", roundCounter);
+      localStorage.setItem("roundNumber", roundCounter + 1);
     } else alert("Cannot submit. Sum of scores is not zero.");
   }
   
@@ -85,19 +74,26 @@ function Add() {
         <Grid className="" item xs={4}>
           <p className="round-counter">Round: {roundCounter}</p>
         </Grid>
-        <Grid className="" item xs={4}>
+        <Grid className="" item xs={3}>
       <p className={total === 0 ? "sum-text-blue" : "sum-text"}>
         Sum: {isNaN(total) ? 0 : total}
       </p>          
         </Grid>
-        <Grid className="" item xs={4}>
-          
+        <Grid className="" item xs={5}>
+        <p className="round-counter" >
+          Big Win
+          <Switch 
+          size="small" 
+          checked={bigWin}
+          onChange={handleSwitch}
+          />
+          </p>
         </Grid>
       </Grid>
         {/* player 1 */}
         <Grid container spacing={0}>
           <Grid className="control-name" item xs={8}>
-            {names[0]} <img  style={{display: currentDealer === 0 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
+            {names[0]} <img  style={{display: roundCounter%4 === 1 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
           </Grid>
           <Grid className="control-point" style={{color: number1 < 0 ? "#fd5252" : "#424647"}} item xs={4}>
             {number1}
@@ -119,11 +115,12 @@ function Add() {
           <Grid item xs={8}>
             <Slider
               size="small"
-              min={-50}
-              max={50}
+              min={minValue}
+              max={maxValue}
               defaultValue={0}
               value={number1}
               onChange={e => setNumber1(parseInt(e.target.value))}
+              marks={marks}
             />
           </Grid>
           <Grid item xs={2}>
@@ -140,7 +137,7 @@ function Add() {
         {/* player 2 */}
         <Grid container spacing={0}>
            <Grid className="control-name" item xs={8}>
-             {names[1]} <img style={{display: currentDealer === 1 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
+             {names[1]} <img style={{display: roundCounter%4 === 2 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
            </Grid>
            <Grid className="control-point" style={{color: number2 < 0 ? "#fd5252" : "#424647"}} item xs={4}>
              {number2}
@@ -162,11 +159,12 @@ function Add() {
            <Grid item xs={8}>
              <Slider
                size="small"
-               min={-50}
-               max={50}
+               min={minValue}
+               max={maxValue}
                defaultValue={0}
                value={number2}
                onChange={e => setNumber2(parseInt(e.target.value))}
+               marks={marks}
              />
            </Grid>
            <Grid item xs={2}>
@@ -183,7 +181,7 @@ function Add() {
         {/* player 3 */}
         <Grid container spacing={0}>
            <Grid className="control-name" item xs={8}>
-             {names[2]} <img style={{display: currentDealer === 2 ? "" : "none"}}  alt="dealer icon" src={dealer} ></img>
+             {names[2]} <img style={{display: roundCounter%4 === 3 ? "" : "none"}}  alt="dealer icon" src={dealer} ></img>
            </Grid>
            <Grid className="control-point" style={{color: number3 < 0 ? "#fd5252" : "#424647"}} item xs={4}>
              {number3}
@@ -205,11 +203,12 @@ function Add() {
            <Grid item xs={8}>
              <Slider
                size="small"
-               min={-50}
-               max={50}
+               min={minValue}
+               max={maxValue}
                defaultValue={0}
                value={number3}
                onChange={e => setNumber3(parseInt(e.target.value))}
+               marks={marks}
              />
            </Grid>
            <Grid item xs={2}>
@@ -226,7 +225,7 @@ function Add() {
         {/* player 4 */}
         <Grid container spacing={0}>
            <Grid className="control-name" item xs={8}>
-             {names[3]} <img style={{display: currentDealer === 3 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
+             {names[3]} <img style={{display: roundCounter%4 === 0 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
            </Grid>
            <Grid className="control-point" style={{color: number4 < 0 ? "#fd5252" : "#424647"}} item xs={4}>
              {number4}
@@ -248,11 +247,12 @@ function Add() {
            <Grid item xs={8}>
              <Slider
                size="small"
-               min={-50}
-               max={50}
+               min={minValue}
+               max={maxValue}
                defaultValue={0}
                value={number4}
                onChange={e => setNumber4(parseInt(e.target.value))}
+               marks={marks}
              />
            </Grid>
            <Grid item xs={2}>
