@@ -93,7 +93,7 @@ function Add() {
         {/* player 1 */}
         <Grid container spacing={0}>
           <Grid className="control-name" item xs={8}>
-            {names[0]} <img  style={{display: roundCounter%4 === 1 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
+            {names[0]} <img  className="dealer-logo" style={{display: roundCounter%4 === 1 ? "" : "none"}} alt="dealer icon" src={dealer} ></img>
           </Grid>
           <Grid className="control-point" style={{color: number1 < 0 ? "#fd5252" : "#424647"}} item xs={4}>
             {number1}
@@ -120,6 +120,7 @@ function Add() {
               defaultValue={0}
               value={number1}
               onChange={e => setNumber1(parseInt(e.target.value))}
+              valueLabelDisplay="auto"
               marks={marks}
             />
           </Grid>
@@ -164,6 +165,7 @@ function Add() {
                defaultValue={0}
                value={number2}
                onChange={e => setNumber2(parseInt(e.target.value))}
+               valueLabelDisplay="auto"
                marks={marks}
              />
            </Grid>
@@ -208,6 +210,7 @@ function Add() {
                defaultValue={0}
                value={number3}
                onChange={e => setNumber3(parseInt(e.target.value))}
+               valueLabelDisplay="auto"
                marks={marks}
              />
            </Grid>
@@ -252,6 +255,7 @@ function Add() {
                defaultValue={0}
                value={number4}
                onChange={e => setNumber4(parseInt(e.target.value))}
+               valueLabelDisplay="auto"
                marks={marks}
              />
            </Grid>

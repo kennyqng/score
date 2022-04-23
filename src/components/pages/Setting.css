@@ -18,12 +18,11 @@
 }
 
 .input {
-    border-radius: 5px;
+    border-radius: 8px;
     margin: 5px;
     width: 200px;
-    background-color: #424647;
-    color: #E5E5E5;
-    border: none;
+    border: 1px solid #394745;
+    color: #394745;
     font-size: medium;
 }
 .setting-options {
@@ -41,8 +40,8 @@
     height: 50px;
     border-radius: 8px;
     border: none;
-    background-color: #424647;
-    color: #E5E5E5;
+    background-color: #4B1980;
+    color: #ffffff;
     font-size: large;
 }
 .button-delete {
@@ -52,7 +51,7 @@
     color:#d56161;
 }
 .author {
-    margin: 160px 0px 5px 0px;
+    margin: 100px 0px 5px 0px;
     color: #424647;
     font-size: medium;
     text-align: center;

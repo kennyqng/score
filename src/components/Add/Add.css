@@ -35,6 +35,15 @@
   overflow: hidden;  
   text-overflow: ellipsis;
 }
+.dealer-logo {
+  /* height: 40vmin; */
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dealer-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
 .control-point {
   text-align: right;
   font-size: medium;
@@ -60,8 +69,8 @@
   margin: 8px 0px 30px ;
   border-radius: 8px;
   border: none;
-  background-color: #424647;
-  color: #E5E5E5;
+  background-color: #4B1980;
+  color: #ffffff;
 }
 .playerName {
   padding: 0px;

@@ -10,7 +10,6 @@ function NavBar() {
             <ul>
                 <li><Link to="/" className="link-home" > <Icon>home</Icon> </Link></li>
                 <li ><Link to="/setting" className="link-setting" > <Icon>settings</Icon> </Link></li>
-                {/* <li><Link to="/edit" className="link-edit" > <Icon>edit</Icon></Link></li> */}
             </ul>
         </div>
     )

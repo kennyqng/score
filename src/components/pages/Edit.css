@@ -5,8 +5,9 @@
 }
 
 .edit-input {
-    width: 67px;
-    /* border-radius: 5px; */
+    width: 60px;
+    border-radius: 5px;
+    border: 1px solid #394745;
 }
 
 .update-button {
@@ -15,8 +16,8 @@
     height: 30px;
     border-radius: 8px;
     border: none;
-    background-color: #394745;
-    color: #E5E5E5;
+    background-color: #4B1980;
+    color: #ffffff;
     font-size: medium;
 }
 .cancel-button {
@@ -24,9 +25,8 @@
     width: 80px;
     height: 30px;
     border-radius: 8px;
-    border: none;
-    background-color: #394745;
-    color: #E5E5E5;
+    border: 1px solid #394745;
+    color: #394745;
     font-size: medium;
-    background-color: #ff7979;
+    background-color: #ffffff;
 }
