@@ -1,48 +1,45 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import KN from "../../assets/KN-black.svg";
 import "./Setting.css";
 
 function Setting(props) {
-  const [playerNames, setPlayerNames] = useState(() => {
-    const saved = localStorage.getItem("storedNames");
-    const initialValue = JSON.parse(saved);
-    return initialValue || [];
-  });
+  // const [playerNames, setPlayerNames] = useState(() => {
+  //   const saved = localStorage.getItem("storedNames");
+  //   const initialValue = JSON.parse(saved);
+  //   return initialValue || [];
+  // });
 
   useEffect(() => {
-    setPlayerNames([player1, player2, player3, player4]);
+    // setPlayerNames([player1, player2, player3, player4]);
   });
-
+  
   let navigate = useNavigate();
-
-
+  
+  
   function deleteLocal() {
-      if (window.confirm("delete all data?") === true) {
-          localStorage.removeItem("scoreData");
-          localStorage.removeItem("dealerPosition");
-          localStorage.removeItem("roundNumber");
-          navigate("/");
-      }
+    if (window.confirm("delete all data?") === true) {
+      localStorage.removeItem("scoreData");
+      localStorage.removeItem("dealerPosition");
+      localStorage.removeItem("roundNumber");
+      navigate("/");
+    }
   }
-
+  
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
   const [player3, setPlayer3] = useState("");
   const [player4, setPlayer4] = useState("");
-
+  
   function saveNames() {
-    localStorage.setItem("storedNames", JSON.stringify(playerNames));
+    const allNames = [player1, player2, player3, player4];
+    localStorage.setItem("storedNames", JSON.stringify(allNames));
     navigate("/");
   }
 
   return (
-    <div className="setting">
-      <div className="name-field">
-        {playerNames.map(name => {
-          return <div className="name">{name}</div>;
-        })}
-      </div>
+    <div className="setting">      
       <div>
         <p className="instruction">Enter new names here:</p>
         <input className="input" onChange={e => setPlayer1(e.target.value)}></input>
@@ -63,7 +60,9 @@ function Setting(props) {
           Delete All Scores
         </button>
       </div>
-      <p className="author">Kenny Nguyen 2022</p>
+      <div  className="footer">      
+        <p className="author">Kenny Nguyen 2022</p>
+      </div>
     </div>
   );
 }
