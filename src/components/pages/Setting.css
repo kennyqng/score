@@ -13,14 +13,6 @@
     color: #394745;
     font-size: medium;
 }
-.setting-options {
-    display: block;
-    text-align: left;
-    margin: 60px 0px 5px 30px;
-}
-.setting-edit {
-    color: #424647;
-}
 .button-save {
     margin: 20px 0px 0px 0px;
     width: 150px;
@@ -31,20 +23,31 @@
     color: #ffffff;
     font-size: large;
 }
-.button-delete {
-    border-radius: 5px;
-    margin: 0px 0px 5px 0px;
-    background-color: #424647;
-    color:#d56161;
+.setting-options {
+    display: block;
+    text-align: center;
+    align-items: center;
+    margin: 100px 0px 0px 0px;
+}
+.setting-edit {
+    color: white;
+    text-decoration: none;
+}
+.setting-button {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #394745;
+    border: #394745 solid;
+    border-radius: 8px;
 }
 .footer {
     position: fixed;
     width: 350px;
-    /* padding: 10px 10px 0px 10px; */
     bottom: 0;
 }
 .author {
-    /* margin: 100px 0px 5px 0px; */
     color: #424647;
     font-size: medium;
     text-align: center; 

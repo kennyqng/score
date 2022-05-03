@@ -1,25 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import KN from "../../assets/KN-black.svg";
 import "./Setting.css";
 
 function Setting(props) {
-  // const [playerNames, setPlayerNames] = useState(() => {
-  //   const saved = localStorage.getItem("storedNames");
-  //   const initialValue = JSON.parse(saved);
-  //   return initialValue || [];
-  // });
-
-  useEffect(() => {
-    // setPlayerNames([player1, player2, player3, player4]);
-  });
   
-  let navigate = useNavigate();
-  
+  let navigate = useNavigate();  
   
   function deleteLocal() {
-    if (window.confirm("delete all data?") === true) {
+    if (window.confirm("Delete all data?\nWARNING: Cannot undo.") === true) {
       localStorage.removeItem("scoreData");
       localStorage.removeItem("dealerPosition");
       localStorage.removeItem("roundNumber");
@@ -53,12 +42,12 @@ function Setting(props) {
         </button>
       </div>
       <div className="setting-options">
-        <p className="setting-edit-button">
+        <p className="setting-button">
         <Link className="setting-edit" to="/edit">Edit current score</Link>
         </p>
-        <button className="button-delete" onClick={() => deleteLocal()}>
-          Delete All Scores
-        </button>
+        <p className="setting-button" onClick={() => deleteLocal()}>
+          Delete All
+        </p>
       </div>
       <div  className="footer">      
         <p className="author">Kenny Nguyen 2022</p>
