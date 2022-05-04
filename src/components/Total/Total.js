@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Slider, Box, Grid, Icon } from "@mui/material/";
+import { Box, Grid } from "@mui/material/";
 import "./Total.css";
 
 function Total (props) {

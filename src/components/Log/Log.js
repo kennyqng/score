@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Slider, Box, Grid, Icon } from "@mui/material/";
+import { Box, Grid, Icon } from "@mui/material/";
 import "./Log.css";
 
 function Log(props) {
@@ -19,10 +19,10 @@ function Log(props) {
     return playerTotal;
   }
   let names = JSON.parse(localStorage.getItem("storedNames")) || [
-    "player 1",
-    "player 2",
-    "player 3",
-    "player 4"
+    "Player1",
+    "Player2",
+    "Player3",
+    "Player4"
   ];
 
   return (

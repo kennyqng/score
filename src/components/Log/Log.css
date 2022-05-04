@@ -27,9 +27,11 @@
 .column {
   justify-content: center;
   padding: 4px 4px 4px 4px;
+  font-size: large;
 }
 .red-column {
   justify-content: center;
   padding: 4px 4px 4px 4px;
+  font-size: large;
   color: #ff7979;
 }

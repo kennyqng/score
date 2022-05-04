@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Setting.css";
 
-function Setting(props) {
+function Setting() {
   
   let navigate = useNavigate();  
   
@@ -22,9 +22,11 @@ function Setting(props) {
   const [player4, setPlayer4] = useState("");
   
   function saveNames() {
-    const allNames = [player1, player2, player3, player4];
-    localStorage.setItem("storedNames", JSON.stringify(allNames));
-    navigate("/");
+    if(player1 !== "" & player2 !== "" & player3 !== "" & player4 !== "") {
+      localStorage.setItem("storedNames", JSON.stringify([player1, player2, player3, player4]));
+      navigate("/");
+    }
+    else (alert("No names can be empty."))
   }
 
   return (
