@@ -9,8 +9,8 @@
     border-radius: 8px;
     margin: 5px;
     width: 200px;
-    border: 1px solid #394745;
-    color: #394745;
+    border: 1px solid #424647;
+    color: #424647;
     font-size: medium;
 }
 .button-save {
@@ -32,14 +32,16 @@
 .setting-edit {
     color: white;
     text-decoration: none;
+    font-size: medium;
 }
 .setting-button {
     width: 200px;
     margin-left: auto;
     margin-right: auto;
     color: white;
-    background-color: #394745;
-    border: #394745 solid;
+    background-color: #424647;
+    border: #424647 solid;
+    font-size: medium;
     border-radius: 8px;
 }
 .footer {
