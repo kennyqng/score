@@ -53,8 +53,7 @@ function Setting() {
       </div>
       <div  className="footer">      
         <p className="author">Kenny Nguyen 2022</p>
-        <p className="version">Version 2 07.10.2022</p>
-
+        <p className="version">Version 2.1.1 07.10.2022</p>
       </div>
     </div>
   );
