@@ -48,7 +48,7 @@ function Setting() {
         <Link className="setting-edit" to="/edit">Edit current score</Link>
         </p>
         <p className="setting-button" onClick={() => deleteLocal()}>
-          Delete All
+          Delete All Score Data
         </p>
       </div>
       <div  className="footer">      
