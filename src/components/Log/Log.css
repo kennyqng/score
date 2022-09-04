@@ -35,3 +35,7 @@
   font-size: large;
   color: #ff7979;
 }
+.spacing {
+  background-color: white;
+  height: 5px;
+}
