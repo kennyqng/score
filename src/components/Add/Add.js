@@ -3,9 +3,9 @@ import Log from "../Log/Log";
 import Total from "../Total/Total";
 import dealer from "../../assets/Dealer.svg";
 import "./Add.css";
-import { Button, Slider, Box, Grid, Icon, Switch } from "@mui/material/";
+import { Button, Slider, Box, Grid, Icon, Switch, useThemeProps } from "@mui/material/";
 
-function Add() {
+function Add(props) {
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
   const [number3, setNumber3] = useState(0);
@@ -17,6 +17,13 @@ function Add() {
     "Player 3",
     "Player 4"
   ];
+  const colorPreset = [
+    '#0f6896',
+    '#4B1980',
+    '#df5a4e',
+    '#94bbe9',
+    '#22c1c3'
+  ]
   const [bigWin, setBigWin] = useState(false);
   const handleSwitch = event => {
     setBigWin(event.target.checked);
@@ -72,7 +79,7 @@ function Add() {
 
   return (
     <Box className="Add">
-      <Total arr={local} />
+      <Total arr={local} color={props.color}/>
       <Box className="control">
         <Grid container spacing={0}>
           <Grid className="" item xs={4}>
@@ -311,7 +318,9 @@ function Add() {
           </Grid>
         </Grid>
       </Box>
-      <button className="submit" onClick={() => handleSubmit()}>
+      <button className="submit"
+      style= {{background:colorPreset[props.color]}}
+       onClick={() => handleSubmit()}>
         Submit
       </button>
       <div>

@@ -19,7 +19,7 @@
     height: 50px;
     border-radius: 8px;
     border: none;
-    background-color: #4B1980;
+    background-color: #1976d2;
     color: #ffffff;
     font-size: large;
 }
@@ -32,6 +32,18 @@
 .setting-edit {
     color: white;
     text-decoration: none;
+    font-size: medium;
+}
+.select {
+    font-size: large;
+}
+.theme-button {
+    width: 200px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #1976d2;
     font-size: medium;
 }
 .setting-button {
