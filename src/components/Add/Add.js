@@ -74,7 +74,7 @@ function Add(props) {
       setNumber4(0);
       setRoundCounter(roundCounter + 1);
       localStorage.setItem("roundNumber", roundCounter + 1);
-    } else alert("Cannot submit. Sum of scores is not zero.");
+    } else console.log("Cannot submit. Sum of scores is not zero.");
   }
 
   return (
@@ -318,10 +318,10 @@ function Add(props) {
           </Grid>
         </Grid>
       </Box>
-      <button className="submit"
-      style= {{background:colorPreset[props.color]}}
+      <button className="submit" disabled={total === 0 ? false : true}
+      style= {total === 0 ? {background:colorPreset[props.color]} : {background:"gray"}}
        onClick={() => handleSubmit()}>
-        Submit
+        {total === 0 ? "Submit" : total}
       </button>
       <div>
         <Log arr={local} />

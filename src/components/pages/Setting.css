@@ -27,7 +27,7 @@
     display: block;
     text-align: center;
     align-items: center;
-    margin: 100px 0px 0px 0px;
+    margin: 40px 0px 0px 0px;
 }
 .setting-edit {
     color: white;
@@ -63,14 +63,14 @@
 }
 .author {
     color: #424647;
-    font-size: medium;
+    font-size: smaller;
     text-align: center; 
     vertical-align: middle;
 }
 
 .version {
     color: #424647;
-    font-size: small;
+    font-size: smaller;
     text-align: center; 
     vertical-align: middle;
 }

@@ -10,7 +10,7 @@ function Setting(props) {
   const gradientPresets = [
     'linear-gradient(95deg, rgba(30,25,60,1) 0%, rgba(114,120,150,1) 23%, rgba(161,26,76,1) 42%, rgba(20,77,107,1) 60%, rgba(56,18,74,1) 100%)',
     'linear-gradient(124deg, rgba(101,206,232,1) 49%, rgba(128,0,255,1) 100%)',
-    'linear-gradient(124deg, rgba(223,90,78,1) 33%, rgba(252,0,255,0.8211659663865546) 100%)',
+    'linear-gradient(54deg, rgba(139,61,121,1) 0%, rgba(255,82,48,1) 28%, rgba(254,184,98,1) 51%, rgba(223,90,117,1) 71%, rgba(59,49,124,1) 100%)',
     'radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)',
     'linear-gradient(114deg, rgba(34,193,195,1) 0%, rgba(98,191,152,1) 29%, rgba(115,191,140,1) 37%, rgba(133,190,128,1) 45%, rgba(253,187,45,1) 100%)'
   ];
@@ -83,8 +83,7 @@ function Setting(props) {
         </p>
       </div>
       <div  className="footer">      
-        <p className="author">Kenny Nguyen 2022</p>
-        <p className="version">Version 2.2.1 09.21.2022</p>
+        <p className="author">Kenny Nguyen | version 2.2.1 | 09.21.2022</p>
       </div>
     </div>
   );
