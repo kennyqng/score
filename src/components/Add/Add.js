@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Log from "../Log/Log";
 import Total from "../Total/Total";
 import dealer from "../../assets/Dealer.svg";
-import fireworks from "../../assets/fireworks.gif";
+import money from "../../assets/money.gif";
 import confetti from "../../assets/confetti.gif";
 import "./Add.css";
 import { Button, Slider, Box, Grid, Icon, Switch, useThemeProps } from "@mui/material/";
@@ -26,7 +26,7 @@ function Add(props) {
     '#94bbe9',
     '#22c1c3'
   ]
-  const celebrate = [confetti,fireworks];
+  const celebrate = [confetti,money];
   const [gif, setGif] = useState(0);
   const [celebrating, setCelebrating] = useState("none");
 
