@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Log from "../Log/Log";
 import Total from "../Total/Total";
 import dealer from "../../assets/Dealer.svg";
+import fireworks from "../../assets/fireworks.gif";
+import confetti from "../../assets/confetti.gif";
 import "./Add.css";
 import { Button, Slider, Box, Grid, Icon, Switch, useThemeProps } from "@mui/material/";
 
@@ -24,6 +26,26 @@ function Add(props) {
     '#94bbe9',
     '#22c1c3'
   ]
+  const celebrate = [confetti,fireworks];
+  const [gif, setGif] = useState(0);
+  const [celebrating, setCelebrating] = useState("none");
+
+  const [intervalId, setIntervalId] = useState(0);
+
+  function startCelebrate (gif) {
+    if(intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(0);
+    }
+    setCelebrating("inline");
+    setGif(gif);
+    const newCelebration = setInterval(() => {
+      setCelebrating("none")
+    },60000);
+    
+    setIntervalId(newCelebration);
+  }
+
   const [bigWin, setBigWin] = useState(false);
   const handleSwitch = event => {
     setBigWin(event.target.checked);
@@ -74,11 +96,20 @@ function Add(props) {
       setNumber4(0);
       setRoundCounter(roundCounter + 1);
       localStorage.setItem("roundNumber", roundCounter + 1);
+
+      for(let i = 0; i < 4; i++) {
+        if(play[i] > 53) {
+          startCelebrate(1);
+          break;
+        } else if (play[i] > 26) {
+          startCelebrate(0);
+        }
+      }
     } else console.log("Cannot submit. Sum of scores is not zero.");
   }
-
   return (
     <Box className="Add">
+      <div  className="fireworks" style={{background: "url("+celebrate[gif]+")", display:celebrating}}></div>
       <Total arr={local} color={props.color}/>
       <Box className="control">
         <Grid container spacing={0}>
