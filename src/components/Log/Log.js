@@ -5,10 +5,10 @@ import "./Log.css";
 
 function Log(props) {
   let names = JSON.parse(localStorage.getItem("storedNames")) || [
-    "Player1",
-    "Player2",
-    "Player3",
-    "Player4"
+    "Duy",
+    "Kenny",
+    "Vennesa",
+    "Leo"
   ];
 
   let stat1 = 0;

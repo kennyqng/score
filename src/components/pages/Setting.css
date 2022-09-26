@@ -63,14 +63,7 @@
 }
 .author {
     color: #424647;
-    font-size: smaller;
-    text-align: center; 
-    vertical-align: middle;
-}
-
-.version {
-    color: #424647;
-    font-size: smaller;
+    font-size: 14px;
     text-align: center; 
     vertical-align: middle;
 }

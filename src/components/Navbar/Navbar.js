@@ -4,13 +4,7 @@ import { Button, Slider, Box, Grid, Icon } from "@mui/material/";
 import "./Navbar.css";
 
 function NavBar(props) {
-    const colorPreset = [
-        '#0f6896',
-        '#4B1980',
-        '#df5a4e',
-        '#94bbe9',
-        '#22c1c3'
-      ]
+    const colorPreset = ['#0f6896','#4B1980','#df5a4e','#4ea0ff','#22c1c3'];
     return (
         <div className="Navbar">
             <ul>
