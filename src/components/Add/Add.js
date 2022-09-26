@@ -50,7 +50,7 @@ function Add(props) {
     "Duy",
     "Kenny",
     "Vennesa",
-    "Leo"
+    "Nghia"
   ];
   //save to & load from local storage
   const [local, setLocal] = useState(() => {

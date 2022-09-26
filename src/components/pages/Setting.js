@@ -10,7 +10,7 @@ function Setting(props) {
     "Duy",
     "Kenny",
     "Vennesa",
-    "Leo"
+    "Nghia"
   ];
 
   const gradientPresets = [

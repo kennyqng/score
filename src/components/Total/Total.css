@@ -32,3 +32,9 @@
   font-weight: bold;
   /* color: #ffffff; */
 }
+.king {
+  position:absolute;
+  width: 70px;
+  text-align: center;
+  top: 60px;
+}

@@ -21,7 +21,7 @@ function Total (props) {
         "Duy",
         "Kenny",
         "Vennesa",
-        "Leo"
+        "Nghia"
       ];
       const gradientPresets = [
         //iron patriot
@@ -43,8 +43,13 @@ function Total (props) {
               background: gradientPresets[props.color]
           }} >
             <Grid className="grid-name-point" container spacing={0} >
-            {names.map((name, index) => {
-              return<Grid className="total-name" item xs={3} > {index === props.leader ? "👑" + name: name}</Grid>
+            {names.map((name, index) => {return(
+              <Grid className="total-name" item xs={3} >
+                <div className="king">
+              {index === props.leader ? "👑" : ""} 
+                  </div> 
+              {name}
+              </Grid>)
             })}
           </Grid>
           <Grid className="header-total" container spacing={0}>
