@@ -16,15 +16,12 @@
   text-overflow: ellipsis;
 }
 .edit-link-div {
-  background-color: #F2F5FA;
-  width: 100%;
-  margin: 0px 0px 5px 0px;
+  margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   font-size: medium;
-  float: left;
+  float: right;
 }
 .edit-link {
-  margin: 0px 0px 0px 25px;
   color:#424647;
 }
 .column {
@@ -42,20 +39,6 @@
   background-color: white;
   height: 5px;
 }
-.log-data {
-  /* background-color: #ffffff; */
-}
-.log-buttons {
-  /* margin-bottom: 15px; */
-
-}
-button {
-  margin: 0px 5px 0px 0px;
-  padding: 10px;
-  background: #ffffff;
-  color: #424647;
-  border: none;
-  width: auto;
-  height: 30px;
-  border-radius: 8px;
+.boxName {
+  font-size: 12px;
 }

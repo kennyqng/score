@@ -27,10 +27,7 @@ function Add(props) {
     });
     return players;
   }
-  const [lead, setLead] = useState(() => {
-    const saved = JSON.parse(localStorage.getItem("leader"));
-    return saved || 5;
-  });
+
   function searchLead (arr) {
     let indexOfHighScore = 5;
     let highScore = 0;
@@ -42,7 +39,6 @@ function Add(props) {
         indexOfHighScore = 5;
       }
     }
-    setLead(indexOfHighScore);
     localStorage.setItem("leader", JSON.stringify(indexOfHighScore));
   }
   let award = JSON.parse(localStorage.getItem("awards")) || [0,0,0,0];
@@ -173,7 +169,7 @@ function Add(props) {
   return (
     <Box className="Add">
       <div  className="fireworks" style={{backgroundImage: "url("+celebrate[gif]+")", display:celebrating, backgroundRepeat: bgRepeat}}></div>
-      <Total arr={local} color={props.color} leader={lead}/>
+      <Total arr={local} color={props.color} />
       <Box className="control">
         <Grid container spacing={0}>
           <Grid className="" item xs={4}>

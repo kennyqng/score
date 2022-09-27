@@ -6,12 +6,7 @@ import "./Setting.css";
 function Setting(props) {
   
   let navigate = useNavigate();
-  let names = JSON.parse(localStorage.getItem("storedNames")) || [
-    "Duy",
-    "Kenny",
-    "Vennesa",
-    "Nghia"
-  ];
+  let names = JSON.parse(localStorage.getItem("storedNames")) || ["Duy","Kenny","Vennesa","Nghia"];
 
   const gradientPresets = [
     'linear-gradient(95deg, rgba(30,25,60,1) 0%, rgba(114,120,150,1) 23%, rgba(161,26,76,1) 42%, rgba(20,77,107,1) 60%, rgba(56,18,74,1) 100%)',
