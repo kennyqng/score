@@ -28,6 +28,9 @@ function Setting(props) {
       localStorage.removeItem("scoreData");
       localStorage.removeItem("dealerPosition");
       localStorage.removeItem("roundNumber");
+      localStorage.removeItem("leader");
+      localStorage.removeItem("homer");
+      localStorage.removeItem("awards");
       navigate("/");
     }
   }
@@ -51,7 +54,7 @@ function Setting(props) {
       if(allAlpha){
         localStorage.setItem("storedNames", JSON.stringify(arr));
         navigate("/");
-      } else (alert("Names cannot contain special characters or numbers!"));
+      } else (alert("Names cannot contain special characters."));
     }
     else (alert("No names can be empty."))
   }

@@ -16,22 +16,21 @@ function Add(props) {
   const [number3, setNumber3] = useState(0);
   const [number4, setNumber4] = useState(0);
   const [total, setTotal] = useState(number1 + number2 + number3 + number4);
-  //set indiv total and set leader
+  //set indiv total, set leader, stats
   function calcTotal(arr) {
-    let player1 = 0;
-    let player2 = 0;
-    let player3 = 0;
-    let player4 = 0;
+    let players = [0, 0, 0, 0];
     arr.map(item => {
-      player1 += item[0];
-      player2 += item[1];
-      player3 += item[2];
-      player4 += item[3];
+      players[0] += item[0];
+      players[1] += item[1];
+      players[2] += item[2];
+      players[3] += item[3];
     });
-    const playerTotal = [player1, player2, player3, player4];
-    return playerTotal;
+    return players;
   }
-  const [lead, setLead] = useState(5);
+  const [lead, setLead] = useState(() => {
+    const saved = JSON.parse(localStorage.getItem("leader"));
+    return saved || 5;
+  });
   function searchLead (arr) {
     let indexOfHighScore = 5;
     let highScore = 0;
@@ -44,6 +43,20 @@ function Add(props) {
       }
     }
     setLead(indexOfHighScore);
+    localStorage.setItem("leader", JSON.stringify(indexOfHighScore));
+  }
+  let award = JSON.parse(localStorage.getItem("awards")) || [0,0,0,0];
+  function updateAward (index) {
+    let arr =  award;
+    arr[index] += 1;
+    localStorage.setItem("awards", JSON.stringify(arr));
+  };
+  function translateAward (num) {
+    let medals = "";
+    for(let i = 0; i < num; i++) {
+      medals += "🏅";
+    }
+    return medals;
   }
   //players names
   let names = JSON.parse(localStorage.getItem("storedNames")) || [
@@ -80,6 +93,7 @@ function Add(props) {
       setRoundCounter(roundCounter + 1);
       localStorage.setItem("roundNumber", roundCounter + 1);
       setHomer(5);
+      localStorage.setItem("homer", JSON.stringify(5));
       //determine celebration
       for(let i = 0; i < 4; i++) {
         if(play[i] > 53) {
@@ -88,10 +102,14 @@ function Add(props) {
             startCelebrate(3);
           } else startCelebrate(1);
           setHomer(i);
+          updateAward(i);
+          localStorage.setItem("homer", JSON.stringify(i));
           break;
         } else if (play[i] > 26) {
           startCelebrate(0);
           setHomer(i);
+          updateAward(i);
+          localStorage.setItem("homer", JSON.stringify(i));
           break;
         }
       }
@@ -102,7 +120,11 @@ function Add(props) {
   //fun features: themes and animation
   const colorPreset = ['#0f6896','#4B1980','#df5a4e','#4ea0ff','#22c1c3'];
   const celebrate = [confetti,money, spirit, goku];
-  const [homer, setHomer] = useState(5);
+  // const [homer, setHomer] = useState(5);
+  const [homer, setHomer] = useState(() => {
+    const saved = JSON.parse(localStorage.getItem("homer"));
+    return saved || 5;
+  });
   const [gif, setGif] = useState(0);
   const [bgRepeat, setBgRepeat] = useState("repeat")
   const [celebrating, setCelebrating] = useState("none");
@@ -171,7 +193,7 @@ function Add(props) {
         </Grid>
         {/* player 1 */}
         <Grid container spacing={0}>
-          <Grid className="control-name" item xs={8}>
+          <Grid className="control-name" item xs={5}>
             {names[0]}
             {homer === 0 ? " 🥳": ""}
             <img
@@ -181,11 +203,14 @@ function Add(props) {
               src={dealer}
             ></img>
           </Grid>
+          <Grid className="achievements" item xs={6}>
+            {award[0] > 0 ? translateAward(award[0]): ""}
+          </Grid>
           <Grid
             className="control-point"
             style={{ color: number1 < 0 ? "#fd5252" : "#424647" }}
             item
-            xs={4}
+            xs={1}
           >
             {number1}
           </Grid>
@@ -225,7 +250,7 @@ function Add(props) {
 
         {/* player 2 */}
         <Grid container spacing={0}>
-          <Grid className="control-name" item xs={8}>
+          <Grid className="control-name" item xs={5}>
           {names[1]}
             {homer === 1 ? " 🥳": ""}
             <img
@@ -234,11 +259,14 @@ function Add(props) {
               src={dealer}
             ></img>
           </Grid>
+          <Grid className="achievements" item xs={6}>
+            {award[1] > 0 ? translateAward(award[1]): ""}
+          </Grid>
           <Grid
             className="control-point"
             style={{ color: number2 < 0 ? "#fd5252" : "#424647" }}
             item
-            xs={4}
+            xs={1}
           >
             {number2}
           </Grid>
@@ -278,7 +306,7 @@ function Add(props) {
 
         {/* player 3 */}
         <Grid container spacing={0}>
-          <Grid className="control-name" item xs={8}>
+          <Grid className="control-name" item xs={5}>
           {names[2]}
             {homer === 2 ? " 🥳": ""}
             <img
@@ -287,11 +315,14 @@ function Add(props) {
               src={dealer}
             ></img>
           </Grid>
+          <Grid className="achievements" item xs={6}>
+            {award[2] > 0 ? translateAward(award[2]): ""}
+          </Grid>
           <Grid
             className="control-point"
             style={{ color: number3 < 0 ? "#fd5252" : "#424647" }}
             item
-            xs={4}
+            xs={1}
           >
             {number3}
           </Grid>
@@ -331,7 +362,7 @@ function Add(props) {
 
         {/* player 4 */}
         <Grid container spacing={0}>
-          <Grid className="control-name" item xs={8}>
+          <Grid className="control-name" item xs={5}>
           {names[3]}
             {homer === 3 ? " 🥳": ""}
             <img
@@ -340,11 +371,14 @@ function Add(props) {
               src={dealer}
             ></img>
           </Grid>
+          <Grid className="achievements" item xs={6}>
+            {award[3] > 0 ? translateAward(award[3]): ""}
+          </Grid>
           <Grid
             className="control-point"
             style={{ color: number4 < 0 ? "#fd5252" : "#424647" }}
             item
-            xs={4}
+            xs={1}
           >
             {number4}
           </Grid>

@@ -59,6 +59,9 @@
   font-size: medium;
   font-weight: bold;
 }
+.achievements{
+  text-align: right;
+}
 .player-control {
   margin-bottom: 5px;
 }
