@@ -10,10 +10,13 @@
 .log-name {
   justify-content: center;
   padding: 0px 0px 4px 0px;
-  font-size: large;
+  font-size: 14px;
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.table {
+  font-size: 16px;
 }
 .edit-link-div {
   margin: 0px 0px 0px 0px;
@@ -27,12 +30,12 @@
 .column {
   justify-content: center;
   padding: 4px 4px 4px 4px;
-  font-size: large;
+  /* font-size: large; */
 }
 .red-column {
   justify-content: center;
   padding: 4px 4px 4px 4px;
-  font-size: large;
+  /* font-size: large; */
   color: #ff7979;
 }
 .spacing {

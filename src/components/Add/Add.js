@@ -4,8 +4,7 @@ import Total from "../Total/Total";
 import dealer from "../../assets/Dealer.svg";
 import money from "../../assets/money.gif";
 import confetti from "../../assets/confetti.gif";
-import spirit from "../../assets/ssj3-goku.gif";
-import goku from "../../assets/goku.gif";
+import duck from "../../assets/duck.gif";
 import "./Add.css";
 import { Button, Slider, Box, Grid, Icon, Switch } from "@mui/material/";
 
@@ -93,9 +92,9 @@ function Add(props) {
       //determine celebration
       for(let i = 0; i < 4; i++) {
         if(play[i] > 53) {
-          if(names[i] === "Duy" || names[i] === "Mike") {
+          if(names[i] === "Vennesa" || names[i] === "Kenny") {
             // setBgRepeat("no-repeat");
-            startCelebrate(3);
+            startCelebrate(2);
           } else startCelebrate(1);
           setHomer(i);
           updateAward(i);
@@ -115,7 +114,7 @@ function Add(props) {
   }
   //fun features: themes and animation
   const colorPreset = ['#0f6896','#4B1980','#df5a4e','#4ea0ff','#22c1c3'];
-  const celebrate = [confetti,money, spirit, goku];
+  const celebrate = [confetti,money, duck];
   // const [homer, setHomer] = useState(5);
   const [homer, setHomer] = useState(() => {
     const saved = JSON.parse(localStorage.getItem("homer"));

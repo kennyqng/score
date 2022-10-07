@@ -45,7 +45,7 @@ function Total (props) {
           </Grid>
           <Grid className="header-total" container spacing={0}>
             {total().map(item => {
-              return <Grid className={item < 0 ? 'red-total-column-header' : 'total-column-header'} item xs={3} > {item}</Grid>;
+              return <Grid className={'total-column-header'} item xs={3} > {item}</Grid>;
             })}
           </Grid>
           </Box>

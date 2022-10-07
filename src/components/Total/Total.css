@@ -11,28 +11,21 @@
   color: rgb(255, 255, 255);
 }
 .total-name {
-  font-size: large; 
+  font-size: 18px; 
   font-weight: bolder;
-  padding: 8px 0px 4px 0px;
+  padding: 10px 0px 4px 0px;
   overflow: hidden;  
   text-overflow: ellipsis;
 }
 .total-column-header {
   font-family:   'proxima-nova', sans-serif;
-  font-size: xx-large; 
+  font-size: 32px; 
   width: 70px;
   padding: 0px 0px 8px 0px;
   font-weight: bold;
   }
-.red-total-column-header {
-  font-family:   'proxima-nova', sans-serif;
-  font-size: xx-large; 
-  width: 70px;
-  padding: 0px 0px 8px 0px;
-  font-weight: bold;
-  /* color: #ffffff; */
-}
 .king {
+  font-size: 15px; 
   position:absolute;
   width: 70px;
   text-align: center;

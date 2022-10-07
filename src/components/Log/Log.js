@@ -16,8 +16,6 @@ function Log(props) {
     stats[3] += item[3]
   ]);
 
-  const [display, setDisplay] = useState(0);
-
   return (
     <Box className="log" item sx={{ width: 320 }}>
       <div className="boxName">
