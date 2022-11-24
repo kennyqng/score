@@ -4,7 +4,11 @@ import Total from "../Total/Total";
 import dealer from "../../assets/Dealer.svg";
 import money from "../../assets/money.gif";
 import confetti from "../../assets/confetti.gif";
+import harper from "../../assets/harper.gif";
 import duck from "../../assets/duck.gif";
+import leo from "../../assets/leo.gif";
+import shocked from "../../assets/shocked.gif";
+import elmo from "../../assets/elmo.gif";
 import "./Add.css";
 import { Button, Slider, Box, Grid, Icon, Switch } from "@mui/material/";
 
@@ -92,10 +96,22 @@ function Add(props) {
       //determine celebration
       for(let i = 0; i < 4; i++) {
         if(play[i] > 53) {
-          if(names[i] === "Vennesa" || names[i] === "Kenny") {
+          if(names[i].toLowerCase() === "vennesa" || names[i] === "va") {
             // setBgRepeat("no-repeat");
             startCelebrate(2);
-          } else startCelebrate(1);
+          } else if(names[i].toLowerCase() === "duy" || names[i] === "mike") {
+            // setBgRepeat("no-repeat");
+            startCelebrate(3);
+          } else if(names[i].toLowerCase() === "leo" || names[i] === "nghia") {
+            // setBgRepeat("no-repeat");
+            startCelebrate(4);
+          } else if(names[i].toLowerCase() === "khoa") {
+            // setBgRepeat("no-repeat");
+            startCelebrate(5);
+          } else if(names[i].toLowerCase() === "kenny") {
+            // setBgRepeat("no-repeat");
+            startCelebrate(6);
+          }  else startCelebrate(1);
           setHomer(i);
           updateAward(i);
           localStorage.setItem("homer", JSON.stringify(i));
@@ -114,7 +130,7 @@ function Add(props) {
   }
   //fun features: themes and animation
   const colorPreset = ['#0f6896','#4B1980','#df5a4e','#4ea0ff','#22c1c3'];
-  const celebrate = [confetti,money, duck];
+  const celebrate = [confetti, money, duck, harper, leo, shocked, elmo];
   // const [homer, setHomer] = useState(5);
   const [homer, setHomer] = useState(() => {
     const saved = JSON.parse(localStorage.getItem("homer"));
