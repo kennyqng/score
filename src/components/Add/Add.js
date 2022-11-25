@@ -5,7 +5,7 @@ import dealer from "../../assets/Dealer.svg";
 import money from "../../assets/money.gif";
 import confetti from "../../assets/confetti.gif";
 import harper from "../../assets/harper.gif";
-import duck from "../../assets/duck.gif";
+import duck from "../../assets/jungle-brown-line.gif";
 import leo from "../../assets/leo.gif";
 import shocked from "../../assets/shocked.gif";
 import elmo from "../../assets/elmo.gif";
@@ -61,7 +61,7 @@ function Add(props) {
   let names = JSON.parse(localStorage.getItem("storedNames")) || [
     "Duy",
     "Kenny",
-    "Vennesa",
+    "Venessa",
     "Nghia"
   ];
   //save to & load from local storage
@@ -96,13 +96,13 @@ function Add(props) {
       //determine celebration
       for(let i = 0; i < 4; i++) {
         if(play[i] > 53) {
-          if(names[i].toLowerCase() === "vennesa" || names[i] === "va") {
+          if(names[i].toLowerCase() === "venessa" || names[i].toLowerCase() === "vennesa") {
             // setBgRepeat("no-repeat");
             startCelebrate(2);
-          } else if(names[i].toLowerCase() === "duy" || names[i] === "mike") {
+          } else if(names[i].toLowerCase() === "duy" || names[i].toLowerCase() === "mike") {
             // setBgRepeat("no-repeat");
             startCelebrate(3);
-          } else if(names[i].toLowerCase() === "leo" || names[i] === "nghia") {
+          } else if(names[i].toLowerCase() === "leo" || names[i].toLowerCase() === "nghia") {
             // setBgRepeat("no-repeat");
             startCelebrate(4);
           } else if(names[i].toLowerCase() === "khoa") {
