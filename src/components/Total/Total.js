@@ -13,7 +13,7 @@ function Total (props) {
         });
         return players;
       }
-      let names = JSON.parse(localStorage.getItem("storedNames")) || ["Duy","Kenny","Vennesa","Nghia"];
+      let names = JSON.parse(localStorage.getItem("storedNames")) || ["Duy","Kenny","Venessa","Nghia"];
       const gradientPresets = [
         //iron patriot
         'linear-gradient(152deg, rgba(30,25,60,1) 0%, rgba(114,120,150,1) 27%, rgba(161,26,76,1) 50%, rgba(15,104,150,1) 74%, rgba(56,18,74,1) 100%)',
@@ -24,14 +24,16 @@ function Total (props) {
         //unicorn
         'linear-gradient(328deg, rgba(254,230,0,1) 0%, rgba(246,165,186,1) 27%, rgba(78,215,255,1) 59%, rgba(255,59,201,1) 100%)',
         //pineapple
-        'linear-gradient(114deg, rgba(34,193,195,1) 0%, rgba(98,191,152,1) 29%, rgba(115,191,140,1) 37%, rgba(133,190,128,1) 45%, rgba(253,187,45,1) 100%)'
+        'linear-gradient(114deg, rgba(34,193,195,1) 0%, rgba(98,191,152,1) 29%, rgba(115,191,140,1) 37%, rgba(133,190,128,1) 45%, rgba(253,187,45,1) 100%)',
+        //blue
+        '#1976d2'
       ];
       const lead  = JSON.parse(localStorage.getItem("leader"));
 
     return (
         <div className="Total">
           <Box className="total-names" style={{
-              background: gradientPresets[props.color]
+              background: gradientPresets[props.color], opacity:props.opa
           }} >
             <Grid className="grid-name-point" container spacing={0} >
             {names.map((name, index) => {return(

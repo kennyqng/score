@@ -4,7 +4,7 @@ import { Box, Grid, Icon } from "@mui/material/";
 import "./Log.css";
 
 function Log(props) {
-  let names = JSON.parse(localStorage.getItem("storedNames")) || ["Duy","Kenny","Vennesa","Nghia"];
+  let names = JSON.parse(localStorage.getItem("storedNames")) || ["Duy","Kenny","Venessa","Nghia"];
 
   let stats = [0,0,0,0];
 
@@ -88,7 +88,11 @@ function Log(props) {
             })}
         </Grid>
       </Box>
-
+      {/* <button className={buttonText} disabled={total === 0 ? false : true}
+      style= {total === 0 && buttonText === "Submit" ? {background:colorPreset[props.color]} : {background:"", color:""}}
+       onClick={() => handleSubmit()}>
+        {total === 0 ? buttonText : total}
+      </button> */}
     </Box>
   );
 }

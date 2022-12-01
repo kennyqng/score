@@ -24,10 +24,13 @@ Fun Features:
 
 <br/>
 
-Future Features:
-* Undo last submit.
-* Animation/feedback on submit click.
+Features to consider:
+* all are added. See update log below.
 
 ## Credits
 Kenny Nguyen <br/>
 `GitHub:`  [https://github.com/kennyqng](https://github.com/kennyqng)
+
+
+Update Log:
+* 2022.11.30 - Added undo previous submit button. And added animation flash and button color change when submit is clicked.

@@ -92,7 +92,7 @@ function Setting(props) {
         </p>
       </div>
       <div  className="footer">      
-        <p className="author">Kenny Nguyen | version 2.2.3 | 09.25.2022</p>
+        <p className="author">Kenny Nguyen | version 2.3 | 11.30.2022</p>
       </div>
     </div>
   );

@@ -109,9 +109,25 @@ function Add(props) {
     setGif(gif);
     const newSubmit = setInterval(() => {
       setButtonText("Submit")
-    },6000);
+    },2500);
     
     setIntervalId(newSubmit);
+  }
+  //flashes on submit
+  const [opacityValue, setOpacityValue] = useState(1);
+  function submitFlash() {
+    let num = 0;
+    setOpacityValue(0);
+    const countInterval = setInterval(() => {
+      num += 1;
+      setOpacityValue(current => {
+        return current + 0.1;
+      });
+      if (num > 10) {
+        clearInterval(countInterval);
+        setOpacityValue(1);
+      }
+    }, 5);
   }
   
   function handleSubmit() {
@@ -132,19 +148,14 @@ function Add(props) {
       for(let i = 0; i < 4; i++) {
         if(play[i] > 53) {
           if(names[i].toLowerCase() === "venessa" || names[i].toLowerCase() === "vennesa") {
-            // setBgRepeat("no-repeat");
             startCelebrate(2);
           } else if(names[i].toLowerCase() === "duy" || names[i].toLowerCase() === "mike") {
-            // setBgRepeat("no-repeat");
             startCelebrate(3);
           } else if(names[i].toLowerCase() === "leo" || names[i].toLowerCase() === "nghia") {
-            // setBgRepeat("no-repeat");
             startCelebrate(4);
           } else if(names[i].toLowerCase() === "khoa") {
-            // setBgRepeat("no-repeat");
             startCelebrate(5);
           } else if(names[i].toLowerCase() === "kenny") {
-            // setBgRepeat("no-repeat");
             startCelebrate(6);
           }  else startCelebrate(1);
           setHomer(i);
@@ -162,11 +173,12 @@ function Add(props) {
       //determine current highest standing
       searchLead(calcTotal([play, ...local]));
     } 
+    submitFlash();
     setSubmitted(true);
     changeButtonText();
   }
   //fun features: themes and animation
-  const colorPreset = ['#0f6896','#4B1980','#df5a4e','#4ea0ff','#22c1c3'];
+  const colorPreset = ['#0f6896','#4B1980','#df5a4e','#4ea0ff','#22c1c3', '#1976d2'];
   const celebrate = [confetti, money, duck, harper, leo, shocked, elmo];
   // const [homer, setHomer] = useState(5);
   const [homer, setHomer] = useState(() => {
@@ -221,7 +233,7 @@ function Add(props) {
   return (
     <Box className="Add">
       <div  className="fireworks" style={{backgroundImage: "url("+celebrate[gif]+")", display:celebrating, backgroundRepeat: bgRepeat}}></div>
-      <Total arr={local} color={props.color} />
+      <Total arr={local} color={props.color} opa={opacityValue}/>
       <Box className="control">
         <Grid container spacing={0}>
           <Grid className="" item xs={4}>
