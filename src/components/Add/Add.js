@@ -50,6 +50,11 @@ function Add(props) {
     arr[index] += 1;
     localStorage.setItem("awards", JSON.stringify(arr));
   };
+  function undoAward (index) {
+    let arr =  award;
+    arr[index] -= 1;
+    localStorage.setItem("awards", JSON.stringify(arr));
+  };
   function translateAward (num) {
     let medals = "";
     for(let i = 0; i < num; i++) {
@@ -80,6 +85,34 @@ function Add(props) {
     const initialValue = parseInt(localStorage.getItem("roundNumber"));
     return initialValue || 1;
   });
+  //undo last submit
+  const [submitted, setSubmitted] = useState(false);
+  function undoSubmit () {
+    const undoneLocal = local.splice(1);
+    setLocal(undoneLocal);
+    searchLead(calcTotal(undoneLocal));
+    undoAward(homer);
+    setHomer(5);
+    setRoundCounter(currentCount => {
+      return currentCount - 1;
+    });
+    setSubmitted(false);
+  }
+  //submit button text
+  const [buttonText, setButtonText] = useState("Submit");
+  function changeButtonText () {
+    if(intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(0);
+    }
+    setButtonText("Updated")
+    setGif(gif);
+    const newSubmit = setInterval(() => {
+      setButtonText("Submit")
+    },6000);
+    
+    setIntervalId(newSubmit);
+  }
   
   function handleSubmit() {
     if (total === 0) {
@@ -89,7 +122,9 @@ function Add(props) {
       setNumber2(0);
       setNumber3(0);
       setNumber4(0);
-      setRoundCounter(roundCounter + 1);
+      setRoundCounter(currentCount => {
+        return currentCount + 1;
+      });
       localStorage.setItem("roundNumber", roundCounter + 1);
       setHomer(5);
       localStorage.setItem("homer", JSON.stringify(5));
@@ -127,6 +162,8 @@ function Add(props) {
       //determine current highest standing
       searchLead(calcTotal([play, ...local]));
     } 
+    setSubmitted(true);
+    changeButtonText();
   }
   //fun features: themes and animation
   const colorPreset = ['#0f6896','#4B1980','#df5a4e','#4ea0ff','#22c1c3'];
@@ -188,15 +225,17 @@ function Add(props) {
       <Box className="control">
         <Grid container spacing={0}>
           <Grid className="" item xs={4}>
-            <p className="round-counter">Round: {roundCounter}</p>
+            <p className="round-item">Round: {roundCounter}</p>
           </Grid>
           <Grid className="" item xs={3}>
-            {/* <p className={total === 0 ? "sum-text-blue" : "sum-text"}>
-              Sum: {isNaN(total) ? 0 : total}
-            </p> */}
+            <p className="round-item"
+            style={{display: submitted === false ? "none" : ""}} 
+            onClick={() => undoSubmit()}>
+              <Icon>undo</Icon> 
+              </p>
           </Grid>
           <Grid className="" item xs={5}>
-            <p className="round-counter">
+            <p className="round-item">
               Big Win
               <Switch size="small" checked={bigWin} onChange={handleSwitch} />
             </p>
@@ -427,10 +466,10 @@ function Add(props) {
           </Grid>
         </Grid>
       </Box>
-      <button className="submit" disabled={total === 0 ? false : true}
-      style= {total === 0 ? {background:colorPreset[props.color]} : {background:"#f2f5fa", color:"#424647"}}
+      <button className={buttonText} disabled={total === 0 && buttonText === "Submit" ? false : true}
+      style= {total === 0 && buttonText === "Submit" ? {background:colorPreset[props.color], color:"#ffffff"} : {background:"", color:""}}
        onClick={() => handleSubmit()}>
-        {total === 0 ? "Submit" : total}
+        {total === 0 ? buttonText : total}
       </button>
       <div>
         <Log arr={local} />

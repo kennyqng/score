@@ -24,6 +24,10 @@ Fun Features:
 
 <br/>
 
+Future Features:
+* Undo last submit.
+* Animation/feedback on submit click.
+
 ## Credits
 Kenny Nguyen <br/>
 `GitHub:`  [https://github.com/kennyqng](https://github.com/kennyqng)

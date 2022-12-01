@@ -7,8 +7,6 @@
     align-items: center;
     font-size: calc(10px + 2vmin);
     color: #424647;
-    /* background-image: url(https://i.pinimg.com/originals/41/e7/4b/41e74b0f91b7cb7df6b73e34ae8528a4.gif); */
-    /* https://acegif.com/wp-content/uploads/2020/05/confetti.gif*/
 }
 .fireworks {
   position:absolute; 
@@ -25,7 +23,7 @@
   padding: 5%;
   margin: 20px 0px 20px 0px;
 }
-.round-counter {
+.round-item {
   font-size: 14px;
   margin: 0px 0px 10px 0px;  
 }
@@ -76,15 +74,29 @@
   padding: 0px;
 }
 
-.submit{
+.Submit{
   font-size: larger;
   width: 150px;
   height: 45px;
   margin: 8px 0px 30px ;
   border-radius: 8px;
   border: none;
-  background-color: #1976d2;
-  color: #ffffff;
+  background-color: #f2f5fa;
+  color: #424647;
+}
+.Updated{
+  font-size: large;
+  width: 150px;
+  height: 45px;
+  margin: 8px 0px 30px ;
+  border-radius: 8px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: bold;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #424647;
 }
 .playerName {
   padding: 0px;
