@@ -10,7 +10,7 @@ function Edit() {
     return initialValue || [];
   });
   //get player names from memory, else load default
-  let names = JSON.parse(localStorage.getItem("storedNames")) || [ "p1", "p2", "p3", "p4"  ];
+  let names = JSON.parse(localStorage.getItem("storedNames")) || ["Duy","Kenny","Venessa","Nghia"];
   //for when need to redirect back to home
   let navigate = useNavigate();
   //query of indexes and new edited values
