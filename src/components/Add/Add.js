@@ -109,7 +109,7 @@ function Add(props) {
     setGif(gif);
     const newSubmit = setInterval(() => {
       setButtonText("Submit")
-    },2500);
+    },800);
     
     setIntervalId(newSubmit);
   }
@@ -127,7 +127,7 @@ function Add(props) {
         clearInterval(countInterval);
         setOpacityValue(1);
       }
-    }, 5);
+    }, 50);
   }
   
   function handleSubmit() {
@@ -177,10 +177,14 @@ function Add(props) {
     setSubmitted(true);
     changeButtonText();
   }
+  //Log toggle
+  const [activeButton, setActiveButton] = useState("Transactions");
+  function displayInfo (info) {
+    setActiveButton(info);
+  }  
   //fun features: themes and animation
   const colorPreset = ['#0f6896','#4B1980','#df5a4e','#4ea0ff','#22c1c3', '#1976d2'];
   const celebrate = [confetti, money, duck, harper, leo, shocked, elmo];
-  // const [homer, setHomer] = useState(5);
   const [homer, setHomer] = useState(() => {
     const saved = JSON.parse(localStorage.getItem("homer"));
     return saved || 5;
@@ -243,7 +247,7 @@ function Add(props) {
             <p className="round-item"
             style={{display: submitted === false ? "none" : ""}} 
             onClick={() => undoSubmit()}>
-              <Icon>undo</Icon> 
+              <Icon>undo</Icon>
               </p>
           </Grid>
           <Grid className="" item xs={5}>
@@ -483,8 +487,22 @@ function Add(props) {
        onClick={() => handleSubmit()}>
         {total === 0 ? buttonText : total}
       </button>
+      <div className="logistic">
+        <button className="log-button"
+        style={{opacity: activeButton === "Transactions" ? 1 : 0.5, background:colorPreset[props.color], color:"#ffffff"}}
+        onClick={() => {activeButton === "Transactions" ? displayInfo("none") : displayInfo("Transactions")}}
+        >Transactions</button>
+        <button  className="log-button"
+        style={{opacity: activeButton === "Summary" ? 1 : 0.5, background:colorPreset[props.color], color:"#ffffff"}}
+        onClick={() => {activeButton === "Summary"? displayInfo("none") : displayInfo("Summary")}}
+        >Summary</button>
+        <button  className="log-button" hidden
+        style={{opacity: activeButton === "Chart" ? 1 : 0.5, background:colorPreset[props.color], color:"#ffffff"}}
+        onClick={() => {activeButton === "Chart" ? displayInfo("none") : displayInfo("Chart")}}
+        >Chart</button>   
+      </div>
       <div>
-        <Log arr={local} />
+        <Log arr={local} info={activeButton}/>
       </div>
     </Box>
   );

@@ -18,15 +18,15 @@ function Log(props) {
 
   return (
     <Box className="log" item sx={{ width: 320 }}>
-      <div className="boxName">
-      </div>
-      <div className="edit-link-div">
+      <div className="edit-link-div"
+      style={{display: props.info === "Transactions" ? "" : "none"}}>
         <Link className="edit-link" to="/edit">
           <Icon>edit</Icon>
         </Link>
       </div>
-
-      <Box className="log-container" style={{display: ""}}>
+      <Box className="log-container" 
+      style={{display: props.info === "Transactions" ? "" : "none"}}>
+        
         <Grid className="header-names" container spacing={0}>
               {names.map(name => {
                 return (
@@ -55,10 +55,8 @@ function Log(props) {
             })}
         </Grid>
       </Box>
-
-      <div className="spacing"></div>
-
-      <Box className="log-container">
+      <Box className="log-container"
+            style={{display: props.info === "Summary" ? "" : "none"}}>
         <Grid className="header-names" container spacing={0}>
               {names.map(name => {
                 return (
@@ -88,11 +86,6 @@ function Log(props) {
             })}
         </Grid>
       </Box>
-      {/* <button className={buttonText} disabled={total === 0 ? false : true}
-      style= {total === 0 && buttonText === "Submit" ? {background:colorPreset[props.color]} : {background:"", color:""}}
-       onClick={() => handleSubmit()}>
-        {total === 0 ? buttonText : total}
-      </button> */}
     </Box>
   );
 }
