@@ -23,11 +23,12 @@ function Log(props) {
           <Icon>edit</Icon>
         </Link>
       </div>
-      <div className="edit-link-div"
+      <div className="graph-link-div"
       style={{display: props.info === "Summary" ? "" : "none"}}>
-        <Link className="edit-link" to="/graph">
-          <Icon>data_thresholding</Icon>
+        <Link className="edit-link" to="/graph"> 
+          Graph the Summary
         </Link>
+          <Icon>data_thresholding</Icon>
       </div>
       <Box className="log-container" 
       style={{display: props.info === "Transactions" ? "" : "none"}}>

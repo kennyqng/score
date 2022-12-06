@@ -1,7 +1,29 @@
 .Graph {
-    transform: rotate(90deg);
-    width: 600px;
+    /* width: 400px; */
+    /* height: 100%; */
+    /* padding: 30px 0px 0px 0px; */
+    width: 350px;
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-/* .chart {
-    overflow:auto
-} */
+.chart {
+    /* transform: rotate(90deg); */
+    height: 300px;
+    width: 700px;
+    /* overflow: auto; */
+    /* margin: auto; */
+    position: absolute;   
+    left: 50%;
+    margin-left: -350px;
+    top: 310px;
+}
+.rotate-button {
+    border: none;
+    width: 50px;
+    height: 25px;
+    margin: 2px;
+    border-radius: 10px;
+}

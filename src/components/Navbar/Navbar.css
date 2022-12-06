@@ -3,7 +3,6 @@
     height: 50px;
     display: inline;
     flex-direction: column;
-    max-width: 340px;
 }
 ul {
     list-style-type: none;

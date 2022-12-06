@@ -22,35 +22,37 @@ function Graph() {
     Title,
     Tooltip,
     Legend
-  );
-  const options = {
-    aspectRatio: 1,
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "bottom"
-      },
-      title: {
-        display: true,
-        text: "Total Histories"
-      }
+    );
+    let names = JSON.parse(localStorage.getItem("storedNames")) || ["Duy","Kenny","Venessa","Nghia"];
+    const [local] = useState(() => {
+      const saved = localStorage.getItem("scoreData");
+      const initialValue = JSON.parse(saved);
+      return initialValue || [];
+    });
+    
+    let reversedLocal = local.slice(0).reverse();
+    let stats = [0,0,0,0];
+    let player1 = reversedLocal.map(item => stats[0] += item[0]);
+    let player2 = reversedLocal.map(item => stats[1] += item[1]);
+    let player3 = reversedLocal.map(item => stats[2] += item[2]);
+    let player4 = reversedLocal.map(item => stats[3] += item[3]);
+    const labels = Array.from({ length: player1.length }, (e, i) => i+1);
+    console.log(labels);
+    
+    const [orientation, setOrientation] = useState("rotate(90deg)");
+    const [height, setHeight] = useState("300px");
+    const [width, setWidth] = useState("600px");
+    function handleRotate (mode) {
+      if (mode === "portrait") {
+        setOrientation("rotate(0deg)");
+        setWidth("300px");
+        setHeight("600px");
+      } else if (mode === "landscape") {
+        setOrientation("rotate(90deg)");
+      setWidth("600px");
+      setHeight("300px");
     }
-  };
-  let names = JSON.parse(localStorage.getItem("storedNames")) || ["Duy","Kenny","Venessa","Nghia"];
-  const [local] = useState(() => {
-    const saved = localStorage.getItem("scoreData");
-    const initialValue = JSON.parse(saved);
-    return initialValue || [];
-  });
-
-  let reversedLocal = local.slice(0).reverse();
-
-  let player1 = reversedLocal.map(item => item[0]);
-  let player2 = reversedLocal.map(item => item[1]);
-  let player3 = reversedLocal.map(item => item[2]);
-  let player4 = reversedLocal.map(item => item[3]);
-  const labels = Array.from({ length: player1.length }, (e, i) => i);
-  console.log(labels);
+  }
   const data = {
     labels,
     datasets: [
@@ -80,17 +82,31 @@ function Graph() {
       }
     ]
   };
+const options = {
+  aspectRatio: false,
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "bottom"
+    },
+    title: {
+      display: true,
+      text: "History of Totals"
+    }
+  }
+};
 
   return (
     <div className="Graph">
-      {/* <div>This is the Graph</div>
-            <div>{JSON.stringify(player1)}</div>
-            <div>{JSON.stringify(player2)}</div>
-            <div>{JSON.stringify(player3)}</div>
-        <div>{JSON.stringify(player4)}</div> */}
-        <div className="chart">
+      <button className="rotate-button"
+      onClick={() => {orientation === "rotate(0deg)" ? handleRotate("landscape") : handleRotate("portrait") }}
+      >
+        Rotate</button>
+      <div className="chart" 
+      style={{transform: orientation}}
+      >
       <Line options={options} data={data}/>
-        </div>
+      </div>
     </div>
   );
 }

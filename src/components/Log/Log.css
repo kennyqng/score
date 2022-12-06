@@ -25,6 +25,13 @@
   font-size: medium;
   float: right;
 }
+.graph-link-div {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px 10px 0px;
+  /* padding: 0px 0px 0px 0px; */
+  font-size: large;
+}
 .edit-link {
   color:#424647;
 }
