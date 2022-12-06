@@ -11,6 +11,7 @@ import shocked from "../../assets/shocked.gif";
 import elmo from "../../assets/elmo.gif";
 import "./Add.css";
 import { Button, Slider, Box, Grid, Icon, Switch } from "@mui/material/";
+import { Navigate } from "react-router-dom";
 
 function Add(props) {
   //set each players' points
@@ -106,7 +107,6 @@ function Add(props) {
       setIntervalId(0);
     }
     setButtonText("Updated")
-    setGif(gif);
     const newSubmit = setInterval(() => {
       setButtonText("Submit")
     },800);
@@ -496,10 +496,6 @@ function Add(props) {
         style={{opacity: activeButton === "Summary" ? 1 : 0.5, background:colorPreset[props.color], color:"#ffffff"}}
         onClick={() => {activeButton === "Summary"? displayInfo("none") : displayInfo("Summary")}}
         >Summary</button>
-        <button  className="log-button" hidden
-        style={{opacity: activeButton === "Chart" ? 1 : 0.5, background:colorPreset[props.color], color:"#ffffff"}}
-        onClick={() => {activeButton === "Chart" ? displayInfo("none") : displayInfo("Chart")}}
-        >Chart</button>   
       </div>
       <div>
         <Log arr={local} info={activeButton}/>

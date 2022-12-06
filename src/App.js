@@ -5,6 +5,7 @@ import NavBar from "./components/Navbar/Navbar";
 import Home from "./components/pages/Home";
 import Setting from "./components/pages/Setting";
 import Edit from "./components/pages/Edit";
+import Graph from "./components/pages/Graph";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home color={theme}/>}></Route>
         <Route path="/setting" element={<Setting changeTheme={setTheme} color={theme} />}></Route>
         <Route path="/edit" element={<Edit />}></Route>
+        <Route path="/graph" element={<Graph/>}></Route>
       </Routes>
     </Router>
   );

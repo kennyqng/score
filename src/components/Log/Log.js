@@ -7,7 +7,6 @@ function Log(props) {
   let names = JSON.parse(localStorage.getItem("storedNames")) || ["Duy","Kenny","Venessa","Nghia"];
 
   let stats = [0,0,0,0];
-
   let reversedLocal = props.arr.slice(0).reverse();
   let playerStat = reversedLocal.map(item => [
     stats[0] += item[0],
@@ -22,6 +21,12 @@ function Log(props) {
       style={{display: props.info === "Transactions" ? "" : "none"}}>
         <Link className="edit-link" to="/edit">
           <Icon>edit</Icon>
+        </Link>
+      </div>
+      <div className="edit-link-div"
+      style={{display: props.info === "Summary" ? "" : "none"}}>
+        <Link className="edit-link" to="/graph">
+          <Icon>data_thresholding</Icon>
         </Link>
       </div>
       <Box className="log-container" 
