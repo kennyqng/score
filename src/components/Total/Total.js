@@ -1,5 +1,5 @@
-import { React } from "react";
-import { Box, Grid } from "@mui/material/";
+import { React, useState } from "react";
+import { Box, Grid, Switch } from "@mui/material/";
 import "./Total.css";
 
 function Total (props) {
@@ -29,11 +29,25 @@ function Total (props) {
         '#1976d2'
       ];
       const lead  = JSON.parse(localStorage.getItem("leader"));
+    
+    const [usdView, setusdView]  = useState(false);
+
+    function toUSD(point) {
+      let result = "";
+      if(point < 0) {
+        result = "-$";
+      } else result = "$";
+
+    return (result + Math.abs(point)/2)
+    }
+    const handleSwitch = event => {
+      setusdView(event.target.checked);
+    };
 
     return (
         <div className="Total">
           <Box className="total-names" style={{
-              background: gradientPresets[props.color], opacity:props.opa
+            background: gradientPresets[props.color], opacity:props.opa
           }} >
             <Grid className="grid-name-point" container spacing={0} >
             {names.map((name, index) => {return(
@@ -47,8 +61,17 @@ function Total (props) {
           </Grid>
           <Grid className="header-total" container spacing={0}>
             {total().map(item => {
-              return <Grid className={'total-column-header'} item xs={3} > {item}</Grid>;
+              return <Grid className={usdView ? 'total-column-header-usd': 'total-column-header'} item xs={3} > {usdView ? toUSD(item): item }</Grid>;
             })}
+          </Grid>
+          <Grid className="total-buttons" container spacing={0}>
+            <Grid className="total-buttons"  xs={8}></Grid>
+            <Grid className="total-buttons"  xs={2}>
+              <p className="total-button-name"></p>
+            </Grid>
+            <Grid className="total-buttons"  xs={2}>
+              <Switch className="usd-switch" size="small" checked={usdView} onChange={handleSwitch} />
+            </Grid>
           </Grid>
           </Box>
         </div>

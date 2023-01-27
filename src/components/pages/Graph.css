@@ -1,24 +1,25 @@
 .Graph {
     /* width: 400px; */
     /* height: 100%; */
-    /* padding: 30px 0px 0px 0px; */
+    padding: 0px 0px 0px 0px;
     width: 350px;
+    height: 850px;
     text-align: center;
     display: inline-block;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
+
 }
 .chart {
-    /* transform: rotate(90deg); */
     height: 300px;
-    width: 700px;
-    /* overflow: auto; */
-    /* margin: auto; */
+    width: 650px;
+    overflow: auto;
     position: absolute;   
     left: 50%;
-    margin-left: -350px;
-    top: 310px;
+    margin-left: -325px;
+    top: 265px;
 }
 .rotate-button {
     border: none;

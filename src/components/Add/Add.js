@@ -118,13 +118,13 @@ function Add(props) {
   function submitFlash() {
     let num = 0;
     setOpacityValue(0);
-    const countInterval = setInterval(() => {
+    const opacityInterval = setInterval(() => {
       num += 1;
       setOpacityValue(current => {
         return current + 0.1;
       });
       if (num > 10) {
-        clearInterval(countInterval);
+        clearInterval(opacityInterval);
         setOpacityValue(1);
       }
     }, 50);

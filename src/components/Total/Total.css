@@ -20,13 +20,35 @@
   font-family:   'proxima-nova', sans-serif;
   font-size: 32px; 
   width: 70px;
-  padding: 0px 0px 8px 0px;
+  min-height: 45px;
+  padding: 0px 0px 0px 0px;
   font-weight: bold;
+  margin: 0px 0px 0px 0px;
   }
+.total-column-header-usd {
+  font-family:   'proxima-nova', sans-serif;
+  font-size: 20px; 
+  width: 70px;
+  min-height: 45px;
+  padding: 0px 0px 0x 0px;
+  font-weight: bold;
+}
 .king {
   font-size: 15px; 
   position:absolute;
   width: 70px;
   text-align: center;
   top: 60px;
+}
+.usd-switch {
+  padding: 0px;
+  position:absolute; 
+  justify-content: right;
+}
+.total-buttons {
+  padding: 0px;
+  height: 22px;
+}
+.total-button-name {
+  font-size: 16px;
 }

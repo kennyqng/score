@@ -25,7 +25,7 @@ Fun Features:
 <br/>
 
 Features to consider:
-* Graph total history.
+* viewing ability from other devices.
 
 ## Credits
 Kenny Nguyen <br/>
@@ -33,5 +33,6 @@ Kenny Nguyen <br/>
 
 
 Update Log:
+* 2022.12.06 added chart for history of totals.
 * 2022.12.01 added toggle for transaction and summary
 * 2022.11.30 - Added undo previous submit button. And added animation flash and button color change when submit is clicked.
